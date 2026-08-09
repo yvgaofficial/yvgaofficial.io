@@ -508,9 +508,46 @@ footer strong{
     grid-column:auto;
   }
   }
+  .mobile-menu{
+    display:none;
+    position:absolute;
+    top:82px;
+    right:5%;
+    background:#ffffff;
+    width:220px;
+    padding:10px 0;
+    border-radius:8px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    z-index:999;
+}
+
+.mobile-menu.show{
+    display:flex;
+    flex-direction:column;
+}
+
+.mobile-menu a{
+    display:block;
+    padding:14px 20px;
+    color:#172033;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.mobile-menu a:hover{
+    background:#f1f5f9;
+    }
 </style>
 </head>
+<script>
+function toggleMenu(){
+  document.getElementById("mobileMenu").classList.toggle("show");
+}
 
+function closeMenu(){
+  document.getElementById("mobileMenu").classList.remove("show");
+}
+</script>
 <body>
 
 <!-- HEADER -->
@@ -527,11 +564,19 @@ footer strong{
     Register Now
    </a>
 
-    <div class="menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <div class="menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#assembly" onclick="closeMenu()">Conference</a>
+    <a href="#delegate" onclick="closeMenu()">Register</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
 
   </div>
 
