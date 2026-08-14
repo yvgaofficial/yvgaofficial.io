@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Youth Voices Global Assembly | YVGA 2027</title>
+<title>Youth Voices Global Assembly | YVGA</title>
 
 <meta name="description"
-content="Youth Voices Global Assembly 2027 — International Youth Conference in London, United Kingdom.">
+content="Youth Voices Global Assembly — An international youth platform for leadership, diplomacy, dialogue, collaboration and global engagement.">
 
 <style>
 *{
@@ -99,7 +99,6 @@ nav{
   border-radius:5px;
   text-decoration:none;
   font-weight:800;
-  cursor:pointer;
 }
 
 .register-top:hover{
@@ -125,13 +124,12 @@ nav{
   background:var(--navy);
 }
 
-/* MOBILE MENU */
 .mobile-menu{
   display:none;
   position:absolute;
   right:5%;
   top:82px;
-  width:240px;
+  width:250px;
   background:#fff;
   border-radius:8px;
   box-shadow:0 8px 30px rgba(0,0,0,.18);
@@ -153,17 +151,10 @@ nav{
 
 /* HERO */
 .hero{
-  min-height:720px;
+  min-height:700px;
   background:
-    linear-gradient(
-      rgba(3,15,31,.82),
-      rgba(3,15,31,.91)
-    ),
-    linear-gradient(
-      135deg,
-      #06152b,
-      #123b6d
-    );
+    linear-gradient(rgba(3,15,31,.86),rgba(3,15,31,.94)),
+    linear-gradient(135deg,#06152b,#123b6d);
   color:#fff;
   display:flex;
   align-items:center;
@@ -173,7 +164,7 @@ nav{
 }
 
 .hero-content{
-  max-width:1100px;
+  max-width:1050px;
 }
 
 .eyebrow{
@@ -190,7 +181,7 @@ nav{
   line-height:1.02;
   font-weight:900;
   letter-spacing:1px;
-  margin-bottom:30px;
+  margin-bottom:28px;
 }
 
 .hero h1 span{
@@ -204,30 +195,24 @@ nav{
   font-size:19px;
 }
 
-.hero-info{
+.hero-date{
   margin:35px auto 0;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.info-box{
+  display:inline-block;
+  padding:16px 30px;
   border:1px solid rgba(255,255,255,.25);
   background:rgba(255,255,255,.07);
-  padding:14px 23px;
-  border-radius:5px;
-  min-width:170px;
+  border-radius:6px;
 }
 
-.info-box strong{
+.hero-date strong{
   display:block;
   color:#fff;
+  font-size:23px;
 }
 
-.info-box span{
+.hero-date span{
   color:#c9d5e5;
-  font-size:14px;
+  font-size:13px;
 }
 
 .hero-buttons{
@@ -285,7 +270,6 @@ section{
 /* INTRO */
 .intro{
   text-align:center;
-  background:#fff;
 }
 
 .intro h2{
@@ -306,7 +290,11 @@ section{
   font-size:18px;
 }
 
-/* CARDS */
+/* ABOUT */
+.about{
+  background:#f5f7fa;
+}
+
 .cards{
   max-width:1100px;
   margin:auto;
@@ -333,87 +321,91 @@ section{
   color:var(--muted);
 }
 
-/* CONFERENCE */
-.assembly{
+/* FOCUS */
+.focus{
   background:var(--navy);
   color:#fff;
 }
 
-.assembly .section-title h2{
+.focus .section-title h2{
   color:#fff;
 }
 
-.assembly .section-title p{
+.focus .section-title p{
   color:#cbd6e5;
 }
 
-.facts{
+.focus-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.focus-card{
+  padding:32px 25px;
+  border:1px solid #31445f;
+  border-radius:8px;
+  background:rgba(255,255,255,.035);
+}
+
+.focus-number{
+  color:var(--gold);
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+
+.focus-card h3{
+  font-size:23px;
+  margin-bottom:10px;
+}
+
+.focus-card p{
+  color:#cbd6e5;
+}
+
+/* VALUES */
+.values{
+  background:#fff;
+}
+
+.values-grid{
   max-width:1100px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.fact{
-  border:1px solid #31445f;
-  padding:30px 20px;
-  text-align:center;
-  border-radius:8px;
-  background:rgba(255,255,255,.03);
-}
-
-.fact strong{
-  display:block;
-  color:var(--gold);
-  font-size:28px;
-  margin-bottom:5px;
-}
-
-/* PROGRAMME */
-.programme{
-  max-width:850px;
-  margin:auto;
-}
-
-.day{
-  margin-bottom:35px;
-}
-
-.day-title{
-  background:var(--navy);
-  color:#fff;
-  padding:15px 20px;
-  border-radius:6px;
-  font-size:19px;
-  font-weight:800;
-  margin-bottom:5px;
-}
-
-.step{
-  display:flex;
   gap:20px;
-  padding:22px 5px;
-  border-bottom:1px solid var(--border);
 }
 
-.number{
-  min-width:44px;
-  height:44px;
+.value{
+  text-align:center;
+  padding:30px 20px;
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+
+.value-icon{
+  width:60px;
+  height:60px;
   border-radius:50%;
-  background:var(--blue);
-  color:#fff;
+  background:var(--navy);
+  color:var(--gold);
   display:grid;
   place-items:center;
+  font-size:22px;
   font-weight:900;
+  margin:0 auto 18px;
 }
 
-.step h3{
+.value h3{
   color:var(--navy);
-  margin-bottom:5px;
+  margin-bottom:8px;
 }
 
-.step p{
+.value p{
   color:var(--muted);
 }
 
@@ -446,7 +438,7 @@ section{
   color:var(--gold);
   display:grid;
   place-items:center;
-  font-size:24px;
+  font-size:22px;
   font-weight:900;
   margin:0 auto 18px;
 }
@@ -457,6 +449,34 @@ section{
 }
 
 .category p{
+  color:var(--muted);
+}
+
+/* WHY YVGA */
+.why{
+  background:#fff;
+}
+
+.why-box{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.why-item{
+  padding:25px;
+  border-left:4px solid var(--gold);
+  background:#f7f9fc;
+}
+
+.why-item h3{
+  color:var(--navy);
+  margin-bottom:6px;
+}
+
+.why-item p{
   color:var(--muted);
 }
 
@@ -613,6 +633,44 @@ section{
   cursor:pointer;
 }
 
+/* PARTNERS */
+.partners{
+  background:#f5f7fa;
+}
+
+.partner-box{
+  max-width:950px;
+  margin:auto;
+  text-align:center;
+  padding:50px 40px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+}
+
+.partner-box h3{
+  color:var(--navy);
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.partner-box p{
+  color:var(--muted);
+  max-width:750px;
+  margin:auto;
+}
+
+.partner-btn{
+  display:inline-block;
+  margin-top:25px;
+  background:var(--navy);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:800;
+}
+
 /* CTA */
 .register-cta{
   background:linear-gradient(135deg,#06152b,#123b6d);
@@ -630,30 +688,6 @@ section{
   max-width:720px;
   margin:auto;
   color:#d5dfeb;
-}
-
-/* PARTNERS */
-.partners{
-  background:#fff;
-}
-
-.partner-box{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-  padding:45px;
-  border:1px solid var(--border);
-  border-radius:10px;
-}
-
-.partner-box h3{
-  color:var(--navy);
-  font-size:28px;
-  margin-bottom:12px;
-}
-
-.partner-box p{
-  color:var(--muted);
 }
 
 /* CONTACT */
@@ -716,7 +750,7 @@ footer strong{
   }
 
   .hero{
-    min-height:680px;
+    min-height:650px;
     padding:80px 5%;
   }
 
@@ -728,18 +762,13 @@ footer strong{
     font-size:16px;
   }
 
-  .hero-info{
-    flex-direction:column;
-  }
-
-  .cards{
+  .cards,
+  .focus-grid,
+  .why-box{
     grid-template-columns:1fr;
   }
 
-  .facts{
-    grid-template-columns:1fr 1fr;
-  }
-
+  .values-grid,
   .categories{
     grid-template-columns:1fr 1fr;
   }
@@ -771,7 +800,7 @@ footer strong{
     padding:65px 6%;
   }
 
-  .facts,
+  .values-grid,
   .categories{
     grid-template-columns:1fr;
   }
@@ -797,11 +826,8 @@ alt="Youth Voices Global Assembly Logo"
 >
 
 <div class="logo-text">
-
 <strong>Youth Voices Global Assembly</strong>
-
 <span>INTERNATIONAL YOUTH PLATFORM</span>
-
 </div>
 
 </a>
@@ -816,27 +842,18 @@ onclick="openRegistration();return false;"
 Register Now
 </a>
 
-<div
-class="menu"
-onclick="toggleMenu()"
-aria-label="Open menu"
->
-
+<div class="menu" onclick="toggleMenu()" aria-label="Open menu">
 <span></span>
 <span></span>
 <span></span>
-
 </div>
 
 <div id="mobileMenu" class="mobile-menu">
 
 <a href="#home" onclick="closeMenu()">Home</a>
-
 <a href="#about" onclick="closeMenu()">About YVGA</a>
-
-<a href="#assembly" onclick="closeMenu()">Conference</a>
-
-<a href="#programme" onclick="closeMenu()">Programme</a>
+<a href="#focus" onclick="closeMenu()">Our Focus</a>
+<a href="#participation" onclick="closeMenu()">Who Can Participate</a>
 
 <a
 href="#registration"
@@ -846,7 +863,6 @@ Register Now
 </a>
 
 <a href="#partners" onclick="closeMenu()">Partners</a>
-
 <a href="#contact" onclick="closeMenu()">Contact</a>
 
 </div>
@@ -862,44 +878,29 @@ Register Now
 <div class="hero-content">
 
 <div class="eyebrow">
-International Youth Conference
+International Youth Platform
 </div>
 
 <h1>
 YOUTH VOICES<br>
-GLOBAL ASSEMBLY
+<span>GLOBAL ASSEMBLY</span>
 </h1>
 
 <p>
-Youth Voices Global Assembly is a proposed international
-youth platform bringing together young leaders, students,
-professionals, innovators and changemakers from different
-countries for dialogue, leadership and collaboration.
+A global platform dedicated to empowering young people
+through leadership, diplomacy, international dialogue,
+ideas, collaboration and meaningful engagement.
 </p>
 
-<div class="hero-info">
-
-<div class="info-box">
+<div class="hero-date">
 <strong>18–22 January 2027</strong>
-<span>Five-Day Conference</span>
-</div>
-
-<div class="info-box">
-<strong>London</strong>
-<span>United Kingdom</span>
-</div>
-
-<div class="info-box">
-<strong>International</strong>
-<span>Youth Participation</span>
-</div>
-
+<span>YVGA 2027</span>
 </div>
 
 <div class="hero-buttons">
 
-<a href="#assembly" class="btn btn-primary">
-Explore Conference
+<a href="#about" class="btn btn-primary">
+Discover YVGA
 </a>
 
 <a
@@ -920,34 +921,37 @@ Register Now
 <!-- INTRO -->
 <section class="intro">
 
+<div class="eyebrow">Our Vision</div>
+
 <h2>
-WE DEVELOP
-<span>GLOBAL</span><br>
-YOUTH LEADERS.
+EMPOWERING <span>YOUTH.</span><br>
+CONNECTING THE WORLD.
 </h2>
 
 <p>
-YVGA aims to create an international space where young
-people can exchange ideas, develop leadership skills,
-build international relationships and contribute to
-constructive global dialogue.
+Youth Voices Global Assembly aims to create a meaningful
+international space where young people can exchange
+perspectives, strengthen leadership capabilities and
+develop connections across borders.
 </p>
 
 </section>
 
 
 <!-- ABOUT -->
-<section id="about">
+<section class="about" id="about">
 
 <div class="section-title">
 
 <div class="eyebrow">About YVGA</div>
 
-<h2>A Platform For Youth Voices</h2>
+<h2>A Global Platform For Youth Voices</h2>
 
 <p>
-Creating opportunities for young people to connect,
-communicate and contribute to a shared global future.
+YVGA brings together emerging leaders, students,
+professionals, innovators and changemakers around shared
+ideas, international understanding and constructive
+global engagement.
 </p>
 
 </div>
@@ -955,37 +959,108 @@ communicate and contribute to a shared global future.
 <div class="cards">
 
 <div class="card">
-
 <h3>Youth Leadership</h3>
+<p>
+Encouraging young people to develop confidence,
+leadership capabilities and a responsible approach
+to global challenges.
+</p>
+</div>
+
+<div class="card">
+<h3>International Dialogue</h3>
+<p>
+Creating opportunities for young voices to exchange
+perspectives and engage in respectful cross-cultural
+and international dialogue.
+</p>
+</div>
+
+<div class="card">
+<h3>Global Collaboration</h3>
+<p>
+Building connections between young people from different
+backgrounds to encourage cooperation, ideas and future
+youth-led initiatives.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOCUS -->
+<section class="focus" id="focus">
+
+<div class="section-title">
+
+<div class="eyebrow">Our Focus</div>
+
+<h2>Ideas. Leadership. Diplomacy. Action.</h2>
 
 <p>
-Develop leadership skills, confidence and responsible
-global citizenship through meaningful discussions and
-practical experiences.
+YVGA focuses on the areas that help young people become
+more informed, connected and prepared to contribute to
+their communities and the wider world.
 </p>
 
 </div>
 
-<div class="card">
+<div class="focus-grid">
 
+<div class="focus-card">
+<div class="focus-number">01</div>
+<h3>Diplomacy & International Affairs</h3>
+<p>
+Explore international relations, diplomacy, global
+cooperation and the importance of constructive dialogue.
+</p>
+</div>
+
+<div class="focus-card">
+<div class="focus-number">02</div>
+<h3>Leadership & Governance</h3>
+<p>
+Develop leadership thinking, communication, negotiation
+and responsible decision-making skills.
+</p>
+</div>
+
+<div class="focus-card">
+<div class="focus-number">03</div>
 <h3>Global Dialogue</h3>
-
 <p>
-Exchange ideas across cultures, communities and countries
-while learning from different perspectives.
+Exchange ideas across cultures and perspectives while
+encouraging respectful and informed conversations.
 </p>
-
 </div>
 
-<div class="card">
-
-<h3>International Collaboration</h3>
-
+<div class="focus-card">
+<div class="focus-number">04</div>
+<h3>Policy & Ideas</h3>
 <p>
-Build relationships and partnerships that can support
-future youth-led initiatives and projects.
+Encourage young people to think critically about global
+issues and develop constructive ideas for the future.
 </p>
+</div>
 
+<div class="focus-card">
+<div class="focus-number">05</div>
+<h3>Innovation & Entrepreneurship</h3>
+<p>
+Support creativity, innovation and entrepreneurial
+thinking among emerging young professionals.
+</p>
+</div>
+
+<div class="focus-card">
+<div class="focus-number">06</div>
+<h3>Cultural Exchange</h3>
+<p>
+Promote international understanding by connecting people
+from different cultures, communities and backgrounds.
+</p>
 </div>
 
 </div>
@@ -993,67 +1068,59 @@ future youth-led initiatives and projects.
 </section>
 
 
-<!-- CONFERENCE -->
-<section class="assembly" id="assembly">
+<!-- VALUES -->
+<section class="values">
 
 <div class="section-title">
 
-<div class="eyebrow">Proposed Flagship Event</div>
+<div class="eyebrow">Our Values</div>
 
-<h2>Youth Voices Global Assembly 2027</h2>
+<h2>Built Around Meaningful Engagement</h2>
 
 <p>
-A proposed five-day international youth conference in
-London, United Kingdom.
+YVGA seeks to create an environment where young people
+can learn, connect, communicate and contribute.
 </p>
 
 </div>
 
-<div class="facts">
+<div class="values-grid">
 
-<div class="fact">
-<strong>18–22</strong>
-January 2027
+<div class="value">
+<div class="value-icon">L</div>
+<h3>Leadership</h3>
+<p>
+Developing capable and responsible emerging leaders.
+</p>
 </div>
 
-<div class="fact">
-<strong>5 Days</strong>
-International Conference
+<div class="value">
+<div class="value-icon">D</div>
+<h3>Dialogue</h3>
+<p>
+Encouraging respectful exchange of ideas and perspectives.
+</p>
 </div>
 
-<div class="fact">
-<strong>London</strong>
-United Kingdom
+<div class="value">
+<div class="value-icon">C</div>
+<h3>Collaboration</h3>
+<p>
+Connecting people to encourage cooperation and shared ideas.
+</p>
 </div>
 
-<div class="fact">
-<strong>Global</strong>
-Youth Participation
+<div class="value">
+<div class="value-icon">I</div>
+<h3>Inclusion</h3>
+<p>
+Creating space for diverse voices and experiences.
+</p>
 </div>
 
 </div>
 
 </section>
-
-
-<!-- PROGRAMME -->
-<section id="programme">
-
-<div class="section-title">
-
-<div class="eyebrow">Proposed Five-Day Programme</div>
-
-<h2>Five Days. One Global Youth Platform.</h2>
-
-<p>
-A programme built around leadership, dialogue,
-international cooperation, networking and youth
-participation.
-</p>
-
-</div>
-
-<div class="programme">
 
 
 <!-- PARTICIPATION -->
@@ -1066,8 +1133,8 @@ participation.
 <h2>Voices From Different Backgrounds</h2>
 
 <p>
-YVGA welcomes applications from young people interested
-in leadership, dialogue, innovation and international
+YVGA welcomes young people with an interest in leadership,
+international affairs, diplomacy, innovation and global
 collaboration.
 </p>
 
@@ -1076,51 +1143,91 @@ collaboration.
 <div class="categories">
 
 <div class="category">
-
 <div class="category-icon">Y</div>
-
 <h3>Young Leaders</h3>
-
 <p>
-Youth leaders and community representatives.
+Youth leaders and emerging community representatives.
 </p>
-
 </div>
 
 <div class="category">
-
 <div class="category-icon">S</div>
-
 <h3>Students</h3>
-
 <p>
-Students interested in international youth engagement.
+Students interested in international engagement and leadership.
 </p>
-
 </div>
 
 <div class="category">
-
 <div class="category-icon">P</div>
+<h3>Young Professionals</h3>
+<p>
+Professionals building their careers and international networks.
+</p>
+</div>
 
-<h3>Professionals</h3>
+<div class="category">
+<div class="category-icon">E</div>
+<h3>Entrepreneurs & Innovators</h3>
+<p>
+Young people developing ideas, businesses and innovative solutions.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY YVGA -->
+<section class="why">
+
+<div class="section-title">
+
+<div class="eyebrow">Why YVGA</div>
+
+<h2>Connect. Learn. Lead.</h2>
 
 <p>
-Young professionals and emerging changemakers.
+YVGA is designed to provide young participants with
+opportunities for learning, networking and meaningful
+international engagement.
 </p>
 
 </div>
 
-<div class="category">
+<div class="why-box">
 
-<div class="category-icon">I</div>
-
-<h3>Innovators</h3>
-
+<div class="why-item">
+<h3>Develop Leadership Skills</h3>
 <p>
-Entrepreneurs, innovators and youth-led initiative builders.
+Strengthen communication, confidence, negotiation and
+leadership abilities.
 </p>
+</div>
 
+<div class="why-item">
+<h3>Expand Your Global Network</h3>
+<p>
+Connect with young people, professionals and emerging
+leaders from different backgrounds.
+</p>
+</div>
+
+<div class="why-item">
+<h3>Engage With Global Ideas</h3>
+<p>
+Explore international issues, perspectives and ideas
+through dialogue and discussion.
+</p>
+</div>
+
+<div class="why-item">
+<h3>Share Your Voice</h3>
+<p>
+Bring your ideas, experiences and perspectives to an
+international youth platform.
+</p>
 </div>
 
 </div>
@@ -1151,30 +1258,15 @@ action="https://formsubmit.co/yvga.official@gmail.com"
 method="POST"
 >
 
-<input
-type="hidden"
-name="_subject"
-value="New YVGA 2027 Conference Registration"
-/>
+<input type="hidden" name="_subject"
+value="New YVGA 2027 Conference Registration">
 
-<input
-type="hidden"
-name="_template"
-value="table"
-/>
+<input type="hidden" name="_template" value="table">
 
-<input
-type="hidden"
-name="_captcha"
-value="false"
-/>
+<input type="hidden" name="_captcha" value="false">
 
-<input
-type="hidden"
-name="_next"
-value="https://yvga.co.uk/"
-/>
-
+<input type="hidden" name="_next"
+value="https://yvga.co.uk/">
 
 <div class="form-section-title">
 1. Personal Information
@@ -1183,7 +1275,6 @@ value="https://yvga.co.uk/"
 <div class="form-grid">
 
 <div class="form-group">
-
 <label>
 First Name <span class="required">*</span>
 </label>
@@ -1192,13 +1283,10 @@ First Name <span class="required">*</span>
 type="text"
 name="first_name"
 required
-placeholder="Enter your first name"
->
-
+placeholder="Enter your first name">
 </div>
 
 <div class="form-group">
-
 <label>
 Last Name <span class="required">*</span>
 </label>
@@ -1207,13 +1295,10 @@ Last Name <span class="required">*</span>
 type="text"
 name="last_name"
 required
-placeholder="Enter your last name"
->
-
+placeholder="Enter your last name">
 </div>
 
 <div class="form-group">
-
 <label>
 Email Address <span class="required">*</span>
 </label>
@@ -1222,31 +1307,351 @@ Email Address <span class="required">*</span>
 type="email"
 name="email"
 required
-placeholder="you@example.com"
->
-
+placeholder="you@example.com">
 </div>
 
 <div class="form-group">
-
-<label>
-Phone / WhatsApp
-</label>
+<label>Phone / WhatsApp</label>
 
 <input
 type="tel"
 name="phone"
-placeholder="+92..."
->
-
+placeholder="+92...">
 </div>
 
 <div class="form-group">
-
 <label>
 Date of Birth <span class="required">*</span>
 </label>
 
 <input
 type="date"
-name="date_
+name="date_of_birth"
+required>
+</div>
+
+<div class="form-group">
+<label>Gender</label>
+
+<select name="gender">
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+<option>Prefer not to say</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Nationality</label>
+
+<input
+type="text"
+name="nationality"
+placeholder="Enter your nationality">
+</div>
+
+<div class="form-group">
+<label>Country of Residence</label>
+
+<input
+type="text"
+name="country"
+placeholder="Enter your country">
+</div>
+
+<div class="form-group full">
+<label>City</label>
+
+<input
+type="text"
+name="city"
+placeholder="Enter your city">
+</div>
+
+</div>
+
+
+<div class="form-section-title">
+2. Education & Professional Background
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Current Status</label>
+
+<select name="status">
+<option value="">Select</option>
+<option>Student</option>
+<option>Young Professional</option>
+<option>Entrepreneur</option>
+<option>Youth Leader</option>
+<option>Researcher</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Organization / Institution</label>
+
+<input
+type="text"
+name="organization"
+placeholder="University, organization or company">
+</div>
+
+<div class="form-group full">
+<label>Field of Study / Profession</label>
+
+<input
+type="text"
+name="field"
+placeholder="Enter your field of study or profession">
+</div>
+
+</div>
+
+
+<div class="form-section-title">
+3. YVGA Participation
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Area of Interest</label>
+
+<select name="interest">
+<option value="">Select</option>
+<option>Youth Leadership</option>
+<option>Diplomacy & International Affairs</option>
+<option>Global Dialogue</option>
+<option>Policy & Ideas</option>
+<option>Innovation & Entrepreneurship</option>
+<option>Cultural Exchange</option>
+<option>International Networking</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Participation Category</label>
+
+<select name="category">
+<option value="">Select</option>
+<option>Young Leader</option>
+<option>Student</option>
+<option>Young Professional</option>
+<option>Entrepreneur / Innovator</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group full">
+<label>Why would you like to participate?</label>
+
+<textarea
+name="motivation"
+placeholder="Tell us briefly about your motivation to participate in YVGA."></textarea>
+</div>
+
+<div class="form-group full">
+<label>Tell us about your leadership, community or professional experience</label>
+
+<textarea
+name="experience"
+placeholder="Briefly describe your experience, projects or achievements."></textarea>
+</div>
+
+</div>
+
+
+<div class="checkbox-group">
+
+<input
+type="checkbox"
+id="agreement"
+name="agreement"
+required>
+
+<label for="agreement">
+I confirm that the information provided in this application
+is accurate and complete.
+</label>
+
+</div>
+
+
+<div class="submit-area">
+
+<button type="submit" class="submit-btn">
+Submit Registration
+</button>
+
+<br>
+
+<button
+type="button"
+class="close-btn"
+onclick="closeRegistration()">
+Close Registration
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- PARTNERS -->
+<section class="partners" id="partners">
+
+<div class="section-title">
+
+<div class="eyebrow">Partnerships</div>
+
+<h2>Become a Partner</h2>
+
+<p>
+YVGA welcomes organizations, institutions, businesses and
+supporters interested in contributing to youth leadership
+and international engagement.
+</p>
+
+</div>
+
+<div class="partner-box">
+
+<h3>Support the Next Generation of Global Leaders</h3>
+
+<p>
+Partnership opportunities can support youth participation,
+leadership development, international dialogue, networking
+and youth-led initiatives.
+</p>
+
+<a
+href="mailto:yvga.official@gmail.com?subject=YVGA Partnership Inquiry"
+class="partner-btn">
+Become a Partner
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="register-cta">
+
+<h2>Make Your Voice Part of the Global Conversation.</h2>
+
+<p>
+Join a growing platform focused on youth leadership,
+international dialogue and meaningful collaboration.
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="#registration"
+class="btn btn-gold"
+onclick="openRegistration();return false;">
+Register Now
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<div class="eyebrow">Contact YVGA</div>
+
+<div class="section-title">
+
+<h2>Connect With Us</h2>
+
+<p>
+For registration, partnership and general enquiries,
+contact the Youth Voices Global Assembly team.
+</p>
+
+<a
+class="email"
+href="mailto:yvga.official@gmail.com">
+yvga.official@gmail.com
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div>
+<strong>Youth Voices Global Assembly</strong>
+<br>
+International Youth Platform
+</div>
+
+<div>
+© 2026 Youth Voices Global Assembly. All rights reserved.
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+  document
+    .getElementById("mobileMenu")
+    .classList.toggle("show");
+}
+
+function closeMenu(){
+  document
+    .getElementById("mobileMenu")
+    .classList.remove("show");
+}
+
+function openRegistration(){
+  document
+    .getElementById("registration")
+    .classList.add("show");
+
+  setTimeout(function(){
+    document
+      .getElementById("registration")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+  },50);
+
+  closeMenu();
+}
+
+function closeRegistration(){
+  document
+    .getElementById("registration")
+    .classList.remove("show");
+
+  document
+    .getElementById("home")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
