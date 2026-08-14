@@ -4,9 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Youth Voices Global Assembly</title>
+<title>Youth Voices Global Assembly | YVGA</title>
+
+<meta name="description"
+content="Youth Voices Global Assembly — an international youth platform for leadership, dialogue, collaboration and global exchange.">
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -24,137 +28,246 @@ body{
   background:#fff;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 nav{
   position:sticky;
   top:0;
-  z-index:100;
-  height:82px;
-  background:#438fd9;
+  z-index:1000;
+  min-height:86px;
+  background:#fff;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 5%;
-  box-shadow:0 2px 10px rgba(0,0,0,.12);
+  padding:10px 5%;
+  box-shadow:0 3px 18px rgba(0,0,0,.10);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:#07162d;
 }
 
 .logo img{
-  width:78px;
-  height:auto;
+  width:62px;
+  height:62px;
+  object-fit:contain;
   display:block;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+}
+
+.logo-title{
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:.3px;
+  color:#07162d;
+}
+
+.logo-subtitle{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:#c49a36;
+  margin-top:4px;
+  text-transform:uppercase;
 }
 
 .nav-right{
   display:flex;
   align-items:center;
-  gap:25px;
+  gap:18px;
 }
 
 .register{
-  background:#4b72df;
+  background:#07162d;
   color:#fff;
   text-decoration:none;
-  padding:13px 25px;
-  border-radius:5px;
-  font-size:18px;
-  font-weight:500;
+  padding:12px 22px;
+  border-radius:6px;
+  font-size:15px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.register:hover{
+  background:#c49a36;
 }
 
 .menu{
-  width:58px;
-  height:56px;
-  border:2px solid white;
-  border-radius:5px;
+  width:54px;
+  height:50px;
+  border:2px solid #07162d;
+  border-radius:7px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  gap:7px;
+  gap:6px;
+  cursor:pointer;
 }
 
 .menu span{
-  width:34px;
+  width:29px;
   height:2px;
-  background:white;
+  background:#07162d;
 }
 
-/* HERO */
+/* MOBILE MENU */
+
+.mobile-menu{
+  display:none;
+  position:absolute;
+  top:82px;
+  right:5%;
+  background:#fff;
+  width:230px;
+  border-radius:10px;
+  box-shadow:0 10px 35px rgba(0,0,0,.18);
+  overflow:hidden;
+}
+
+.mobile-menu.show{
+  display:flex;
+  flex-direction:column;
+}
+
+.mobile-menu a{
+  padding:15px 20px;
+  color:#172033;
+  text-decoration:none;
+  font-weight:700;
+  border-bottom:1px solid #eee;
+}
+
+.mobile-menu a:hover{
+  background:#f5f7fa;
+  color:#c49a36;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-  min-height:720px;
+  min-height:760px;
   background:
-    linear-gradient(rgba(0,0,0,.66),rgba(0,0,0,.70)),
-    linear-gradient(135deg,#07162d,#123b6d);
+    radial-gradient(circle at 80% 20%,rgba(196,154,54,.20),transparent 30%),
+    linear-gradient(135deg,#020b18,#07162d 55%,#0d2d50);
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:90px 6%;
-  color:white;
+  padding:100px 6%;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid rgba(196,154,54,.15);
+  border-radius:50%;
+  right:-200px;
+  bottom:-250px;
 }
 
 .hero-content{
   max-width:1100px;
+  position:relative;
+  z-index:2;
 }
 
 .eyebrow{
   color:#d4b15c;
   font-size:14px;
   font-weight:800;
-  letter-spacing:3px;
+  letter-spacing:4px;
   text-transform:uppercase;
   margin-bottom:25px;
 }
 
 .hero h1{
   font-size:clamp(45px,7vw,88px);
-  line-height:1.04;
+  line-height:1.02;
   font-weight:900;
   letter-spacing:1px;
   text-transform:uppercase;
   margin-bottom:30px;
 }
 
+.hero h1 span{
+  color:#d4b15c;
+}
+
 .hero p{
-  max-width:800px;
+  max-width:780px;
   margin:auto;
-  color:#e4ebf5;
+  color:#dce5f1;
   font-size:19px;
 }
 
 .hero-buttons{
-  margin-top:35px;
+  margin-top:38px;
 }
 
 .btn{
   display:inline-block;
   text-decoration:none;
   padding:14px 28px;
-  border-radius:5px;
-  font-weight:700;
+  border-radius:6px;
+  font-weight:800;
   margin:5px;
+  transition:.3s;
+  border:none;
 }
 
 .btn-primary{
   background:#438fd9;
-  color:white;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:#d4b15c;
+  color:#07162d;
 }
 
 .btn-outline{
-  border:2px solid white;
-  color:white;
+  border:2px solid #fff;
+  color:#fff;
 }
 
-/* INTRO */
+.btn-outline:hover{
+  background:#fff;
+  color:#07162d;
+}
+
+/* =========================
+   INTRO
+========================= */
+
 .intro{
-  padding:90px 7%;
+  padding:95px 7%;
   text-align:center;
-  background:white;
+  background:#fff;
 }
 
 .intro h2{
   font-size:clamp(38px,5vw,60px);
   line-height:1.1;
-  color:#444;
+  color:#07162d;
   text-transform:uppercase;
   margin-bottom:25px;
 }
@@ -170,14 +283,17 @@ nav{
   font-size:18px;
 }
 
-/* SECTIONS */
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
 section{
-  padding:85px 7%;
+  padding:90px 7%;
 }
 
 .section-title{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:55px;
 }
 
 .section-title .eyebrow{
@@ -191,32 +307,44 @@ section{
 }
 
 .section-title p{
-  max-width:750px;
+  max-width:760px;
   margin:18px auto 0;
   color:#667085;
   font-size:18px;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
+
 .cards{
   max-width:1100px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  gap:25px;
 }
 
 .card{
-  padding:32px;
-  border:1px solid #e3e7ed;
-  border-radius:8px;
-  background:white;
-  box-shadow:0 5px 20px rgba(0,0,0,.05);
+  padding:35px;
+  border:1px solid #e5e9ef;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 8px 28px rgba(7,22,45,.07);
+  transition:.3s;
+  text-decoration:none;
+  display:block;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(7,22,45,.12);
+  border-color:#438fd9;
 }
 
 .card h3{
   color:#07162d;
-  font-size:23px;
+  font-size:22px;
   margin-bottom:12px;
 }
 
@@ -224,14 +352,17 @@ section{
   color:#667085;
 }
 
-/* ASSEMBLY */
+/* =========================
+   CONFERENCE
+========================= */
+
 .assembly{
   background:#07162d;
-  color:white;
+  color:#fff;
 }
 
 .assembly .section-title h2{
-  color:white;
+  color:#fff;
 }
 
 .assembly .section-title p{
@@ -243,24 +374,28 @@ section{
   margin:auto;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  gap:18px;
 }
 
 .fact{
   border:1px solid #31405a;
-  padding:28px 20px;
+  padding:30px 20px;
   text-align:center;
-  border-radius:7px;
+  border-radius:10px;
+  background:rgba(255,255,255,.025);
 }
 
 .fact strong{
   display:block;
   color:#d4b15c;
-  font-size:30px;
+  font-size:28px;
   margin-bottom:5px;
 }
 
-/* PROGRAMME */
+/* =========================
+   PROGRAMME
+========================= */
+
 .programme{
   max-width:850px;
   margin:auto;
@@ -269,16 +404,16 @@ section{
 .step{
   display:flex;
   gap:20px;
-  padding:22px 0;
+  padding:24px 0;
   border-bottom:1px solid #e3e7ed;
 }
 
 .number{
-  min-width:42px;
-  height:42px;
+  min-width:44px;
+  height:44px;
   border-radius:50%;
   background:#438fd9;
-  color:white;
+  color:#fff;
   display:grid;
   place-items:center;
   font-weight:800;
@@ -293,23 +428,27 @@ section{
   color:#667085;
 }
 
-/* JOIN */
+/* =========================
+   REGISTRATION
+========================= */
+
 .join{
   background:#f5f7fa;
 }
 
 .join-box{
-  max-width:1000px;
+  max-width:1050px;
   margin:auto;
-  background:#438fd9;
-  color:white;
+  background:linear-gradient(135deg,#07162d,#0d3157);
+  color:#fff;
   text-align:center;
-  padding:65px 30px;
-  border-radius:8px;
+  padding:70px 35px;
+  border-radius:15px;
+  box-shadow:0 15px 40px rgba(7,22,45,.15);
 }
 
 .join-box h2{
-  font-size:45px;
+  font-size:clamp(35px,5vw,50px);
   line-height:1.1;
   margin-bottom:15px;
 }
@@ -317,18 +456,97 @@ section{
 .join-box p{
   max-width:700px;
   margin:auto;
-  color:#edf5ff;
+  color:#dce5f1;
 }
 
 .join-box .btn{
-  background:white;
-  color:#438fd9;
+  background:#d4b15c;
+  color:#07162d;
   margin-top:25px;
 }
 
-/* CONTACT */
+.join-box .btn:hover{
+  background:#fff;
+}
+
+/* FORM */
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  max-width:900px;
+  margin:35px auto 20px;
+  text-align:left;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+.form-group label{
+  font-weight:700;
+  color:#fff;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid #d9dee7;
+  border-radius:7px;
+  font-family:Arial,sans-serif;
+  font-size:15px;
+  background:#fff;
+  color:#172033;
+}
+
+.form-group textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.consent{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  max-width:900px;
+  margin:20px auto;
+  font-size:14px;
+  color:#dce5f1;
+  text-align:left;
+}
+
+.consent input{
+  margin-top:5px;
+}
+
+.join-box form .btn{
+  cursor:pointer;
+}
+
+/* =========================
+   PARTNERS
+========================= */
+
+#partners{
+  background:#fff;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact{
   text-align:center;
+  background:#f8fafc;
 }
 
 .email{
@@ -336,14 +554,22 @@ section{
   margin-top:20px;
   color:#438fd9;
   font-size:20px;
-  font-weight:700;
+  font-weight:800;
+  text-decoration:none;
 }
 
-/* FOOTER */
+.email:hover{
+  color:#c49a36;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-  background:#050f20;
+  background:#030b17;
   color:#aeb8c8;
-  padding:40px 7%;
+  padding:45px 7%;
   display:flex;
   justify-content:space-between;
   gap:20px;
@@ -351,24 +577,36 @@ footer{
 }
 
 footer strong{
-  color:white;
+  color:#fff;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:800px){
 
   nav{
-    height:72px;
-    padding:0 5%;
+    min-height:72px;
+    padding:8px 5%;
   }
 
   .logo img{
-    width:55px;
+    width:50px;
+    height:50px;
+  }
+
+  .logo-title{
+    font-size:16px;
+  }
+
+  .logo-subtitle{
+    font-size:8px;
+    letter-spacing:1.3px;
   }
 
   .register{
-    padding:10px 15px;
-    font-size:15px;
+    display:none;
   }
 
   .menu{
@@ -377,16 +615,16 @@ footer strong{
   }
 
   .menu span{
-    width:27px;
+    width:26px;
   }
 
-  .nav-right{
-    gap:10px;
+  .mobile-menu{
+    top:72px;
   }
 
   .hero{
-    min-height:650px;
-    padding:70px 5%;
+    min-height:680px;
+    padding:75px 5%;
   }
 
   .hero h1{
@@ -405,101 +643,6 @@ footer strong{
     grid-template-columns:1fr 1fr;
   }
 
-  .join-box h2{
-    font-size:36px;
-  }
-}
-
-@media(max-width:480px){
-
-  .register{
-    display:none;
-  }
-
-  .logo img{
-    width:50px;
-  }
-
-  .facts{
-    grid-template-columns:1fr;
-  }
-
-  section{
-    padding:65px 6%;
-  }
-
-  footer{
-    text-align:center;
-    justify-content:center;
-  }
-}
-  .form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  max-width:900px;
-  margin:30px auto;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.form-group.full{
-  grid-column:1/-1;
-}
-
-.form-group label{
-  font-weight:700;
-  color:#172033;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #d9dee7;
-  border-radius:6px;
-  font-family:Arial,sans-serif;
-  font-size:15px;
-  background:white;
-}
-
-.form-group textarea{
-  min-height:130px;
-  resize:vertical;
-}
-
-.consent{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  max-width:900px;
-  margin:20px auto;
-  font-size:14px;
-  color:#596579;
-}
-
-.consent input{
-  margin-top:5px;
-}
-
-.join-box form{
-  max-width:950px;
-  margin:auto;
-}
-
-.join-box form .btn{
-  display:block;
-  margin:25px auto 0;
-  border:0;
-  cursor:pointer;
-}
-
-@media(max-width:700px){
   .form-grid{
     grid-template-columns:1fr;
   }
@@ -507,84 +650,107 @@ footer strong{
   .form-group.full{
     grid-column:auto;
   }
+
+  .join-box{
+    padding:55px 20px;
   }
-  .mobile-menu{
-    display:none;
-    position:absolute;
-    top:82px;
-    right:5%;
-    background:#ffffff;
-    width:220px;
-    padding:10px 0;
-    border-radius:8px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
-    z-index:999;
 }
 
-.mobile-menu.show{
-    display:flex;
-    flex-direction:column;
+@media(max-width:480px){
+
+  section{
+    padding:65px 6%;
+  }
+
+  .logo-title{
+    font-size:14px;
+  }
+
+  .logo-subtitle{
+    font-size:7px;
+  }
+
+  .logo img{
+    width:45px;
+    height:45px;
+  }
+
+  .facts{
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    text-align:center;
+    justify-content:center;
+  }
 }
 
-.mobile-menu a{
-    display:block;
-    padding:14px 20px;
-    color:#172033;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.mobile-menu a:hover{
-    background:#f1f5f9;
-    }
 </style>
 </head>
-<script>
-function toggleMenu(){
-  document.getElementById("mobileMenu").classList.toggle("show");
-}
 
-function closeMenu(){
-  document.getElementById("mobileMenu").classList.remove("show");
-}
-</script>
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <nav>
 
   <a href="#home" class="logo">
+
     <img src="./yvga-logo.png.png" alt="YVGA Logo">
-   <span>Youth Voices Global Assembly</span>
-</a>
+
+    <div class="logo-text">
+      <div class="logo-title">
+        Youth Voices Global Assembly
+      </div>
+
+      <div class="logo-subtitle">
+        Youth Leadership • Global Dialogue • Shared Future
+      </div>
+    </div>
+
+  </a>
 
   <div class="nav-right">
 
-   <a href="#delegate" class="register"
-   onclick="document.getElementById('delegate').style.display='block';">
-    Register Now
-   </a>
+    <a href="#delegate" class="register">
+      Register Now
+    </a>
 
-  <div class="menu" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+    <div class="menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-<div id="mobileMenu" class="mobile-menu">
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu">
+
     <a href="#home" onclick="closeMenu()">Home</a>
+
     <a href="#about" onclick="closeMenu()">About</a>
+
     <a href="#assembly" onclick="closeMenu()">Conference</a>
+
+    <a href="#programme" onclick="closeMenu()">Programme</a>
+
+    <a href="#partners" onclick="closeMenu()">Partnerships</a>
+
     <a href="#delegate" onclick="closeMenu()">Register</a>
+
     <a href="#contact" onclick="closeMenu()">Contact</a>
-</div>
 
   </div>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero" id="home">
 
   <div class="hero-content">
@@ -595,7 +761,7 @@ function closeMenu(){
 
     <h1>
       YOUTH VOICES.<br>
-      GLOBAL DIALOGUE,<br>
+      <span>GLOBAL DIALOGUE,</span><br>
       LEADERSHIP &<br>
       SHARED FUTURE.
     </h1>
@@ -612,9 +778,8 @@ function closeMenu(){
         Explore Conference
       </a>
 
-      <a href="#delegate" class="btn btn-outline"
-onclick="document.getElementById('delegate').style.display='block'; document.getElementById('delegate').scrollIntoView({behavior:'smooth', block:'start'}); return false;">
-    Register Now 
+      <a href="#delegate" class="btn btn-outline">
+        Register Interest
       </a>
 
     </div>
@@ -624,7 +789,10 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 </header>
 
 
-<!-- INTRO -->
+<!-- =========================
+     INTRO
+========================= -->
+
 <section class="intro">
 
   <h2>
@@ -642,7 +810,10 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section id="about">
 
   <div class="section-title">
@@ -662,31 +833,45 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 
   </div>
 
-
   <div class="cards">
 
     <div class="card">
-      <h3>Youth Leadership</h3>
+
+      <h3>
+        Youth Leadership
+      </h3>
+
       <p>
         Develop leadership skills, confidence and responsible
         global citizenship.
       </p>
+
     </div>
 
     <div class="card">
-      <h3>Global Dialogue</h3>
+
+      <h3>
+        Global Dialogue
+      </h3>
+
       <p>
         Exchange ideas across cultures, communities and
         countries.
       </p>
+
     </div>
 
     <div class="card">
-      <h3>International Collaboration</h3>
+
+      <h3>
+        International Collaboration
+      </h3>
+
       <p>
         Build relationships that can lead to practical youth-led
         initiatives.
       </p>
+
     </div>
 
   </div>
@@ -694,7 +879,10 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 </section>
 
 
-<!-- ASSEMBLY -->
+<!-- =========================
+     CONFERENCE
+========================= -->
+
 <section class="assembly" id="assembly">
 
   <div class="section-title">
@@ -713,7 +901,6 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
     </p>
 
   </div>
-
 
   <div class="facts">
 
@@ -742,7 +929,10 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 </section>
 
 
-<!-- PROGRAMME -->
+<!-- =========================
+     PROGRAMME
+========================= -->
+
 <section id="programme">
 
   <div class="section-title">
@@ -762,27 +952,38 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 
   </div>
 
-
   <div class="programme">
 
     <div class="step">
+
       <div class="number">1</div>
+
       <div>
         <h3>Opening Ceremony</h3>
-        <p>Welcome and introduction to the Assembly.</p>
+        <p>
+          Welcome and introduction to the Assembly.
+        </p>
       </div>
+
     </div>
 
     <div class="step">
+
       <div class="number">2</div>
+
       <div>
         <h3>The Youth Voice</h3>
-        <p>Leadership, diplomacy and global dialogue.</p>
+        <p>
+          Leadership, diplomacy and global dialogue.
+        </p>
       </div>
+
     </div>
 
     <div class="step">
+
       <div class="number">3</div>
+
       <div>
         <h3>Global Panel</h3>
         <p>
@@ -790,176 +991,44 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
           sustainable development.
         </p>
       </div>
+
     </div>
 
     <div class="step">
+
       <div class="number">4</div>
+
       <div>
         <h3>Youth Dialogue & Networking</h3>
         <p>
           Interactive discussions and international connections.
         </p>
       </div>
+
     </div>
 
     <div class="step">
+
       <div class="number">5</div>
+
       <div>
         <h3>Closing & Recognition</h3>
-        <p>Reflections, commitments and next steps.</p>
+        <p>
+          Reflections, commitments and next steps.
+        </p>
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<!-- DELEGATE REGISTRATION -->
-<section class="join" id="delegate" style="display:none;">
-  <div class="join-box">
 
-    <div class="section-title">
-      <div class="eyebrow">JOIN YVGA</div>
-      <h2>BECOME A DELEGATE</h2>
-      <p>
-        Register your interest for the Youth Voices Global Assembly.
-        Our team will contact you after the official event details are confirmed.
-      </p>
-    </div>
+<!-- =========================
+     PARTNERS
+========================= -->
 
-    <form action="https://formsubmit.co/yvga.official@gmail.com" method="POST">
-<input type="hidden" name="_next" value="https://yvga.co.uk/">
-      <input type="hidden" name="_subject"
-       value="Youth Voices Global Assembly — New Delegate Registration">
-
-      <input type="hidden" name="_template" value="table">
-
-      <input type="hidden" name="_captcha" value="false">
-
-      <div class="form-grid">
-
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="Full Name"
-                 placeholder="Enter your full name" required>
-        </div>
-
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" name="Email"
-                 placeholder="Enter your email address" required>
-        </div>
-
-        <div class="form-group">
-          <label>WhatsApp / Phone</label>
-          <input type="tel" name="Phone"
-                 placeholder="+92 300 1234567" required>
-        </div>
-
-        <div class="form-group">
-          <label>Country *</label>
-          <input type="text" name="Country"
-                 placeholder="Your country" required>
-        </div>
-
-        <div class="form-group">
-          <label>City</label>
-          <input type="text" name="City"
-                 placeholder="Your city" required>
-        </div>
-
-        <div class="form-group">
-  <label>Date of Birth *</label>
-  <input type="date" name="Date of Birth" required>
-        </div>
-
-        <div class="form-group">
-          <label>Occupation / Student</label>
-          <input type="text" name="Occupation"
-                 placeholder="Student, professional, entrepreneur..."required>
-        </div>
-
-        <div class="form-group">
-          <label>University / Organization</label>
-          <input type="text" name="Organization"
-                 placeholder="University or organization" required>
-        </div>
-
-        <div class="form-group full">
-  <label>What do you hope to gain from YVGA? *</label>
-  <textarea name="What do you hope to gain from YVGA"
-            placeholder="Tell us what you hope to learn, experience or achieve at YVGA..."
-            required></textarea>
-</div>
-
-        <div class="form-group full">
-          <label>Why do you want to participate? *</label>
-          <textarea name="Motivation"
-                    placeholder="Tell us briefly about your interest in YVGA..."
-                    required></textarea>
-        </div>
-
-        <div class="form-group full">
-          <div class="form-group full">
-  <label>Instagram / Social Media Profile</label>
-  <input type="url" name="Social Media Profile"
-         placeholder="https://instagram.com/your-profile" required>
-</div>
-        </div>
-
-        <div class="form-group full">
-          <label>How did you hear about YVGA?</label>
-          <select name="How did you hear about YVGA">
-            <option value="">Select one</option>
-            <option>Social Media</option>
-            <option>University</option>
-            <option>Friend / Colleague</option>
-            <option>Search Engine</option>
-            <option>Partner Organization</option>
-            <option>Other</option>
-          </select> <required></required></required>
-        </div>
-
-      </div>
-
-      <label class="consent">
-        <input type="checkbox" name="Consent"
-               value="I confirm the information provided is accurate"
-               required>
-        <span>I confirm that the information provided is accurate.</span>
-      </label>
-
-      <button type="submit" class="btn">
-        SUBMIT REGISTRATION
-      </button>
-
-    </form>
-
-  </div>
-</section>
-
-  <div class="join-box">
-
-    <h2>
-      BECOME A DELEGATE
-    </h2>
-
-    <p>
-      Register your interest for the first official Youth Voices
-      Global Assembly. Applications will open after official
-      confirmation of the event.
-    </p>
-
-    <a href="#contact" class="btn">
-      Register Interest
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- PARTNERS -->
 <section id="partners">
 
   <div class="section-title">
@@ -979,31 +1048,45 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 
   </div>
 
-
   <div class="cards">
 
     <a href="#contact" class="card">
-    <h3>Academic Partners</h3>
-    <p>
+
+      <h3>
+        Academic Partners
+      </h3>
+
+      <p>
         Universities and educational institutions supporting
         youth participation.
-    </p>
+      </p>
+
     </a>
 
     <a href="#contact" class="card">
-    <h3>Strategic Partners</h3>
-    <p>
+
+      <h3>
+        Strategic Partners
+      </h3>
+
+      <p>
         Organizations contributing expertise, networks or
         programme support.
-    </p>
+      </p>
+
     </a>
 
     <a href="#contact" class="card">
-    <h3>Sponsors</h3>
-    <p>
+
+      <h3>
+        Sponsors
+      </h3>
+
+      <p>
         Responsible businesses and foundations supporting
         youth-focused programmes.
-    </p>
+      </p>
+
     </a>
 
   </div>
@@ -1011,7 +1094,315 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     REGISTRATION
+========================= -->
+
+<section class="join" id="delegate">
+
+  <div class="join-box">
+
+    <div class="section-title">
+
+      <div class="eyebrow">
+        JOIN YVGA
+      </div>
+
+      <h2>
+        BECOME A DELEGATE
+      </h2>
+
+      <p>
+        Register your interest for the Youth Voices Global Assembly.
+        Our team will contact you after the official event details
+        are confirmed.
+      </p>
+
+    </div>
+
+
+    <form
+      action="https://formsubmit.co/yvga.official@gmail.com"
+      method="POST"
+    >
+
+      <input
+        type="hidden"
+        name="_next"
+        value="https://yvga.co.uk/"
+      >
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="Youth Voices Global Assembly — New Delegate Registration"
+      >
+
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      >
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
+
+
+      <div class="form-grid">
+
+
+        <div class="form-group">
+
+          <label>
+            Full Name *
+          </label>
+
+          <input
+            type="text"
+            name="Full Name"
+            placeholder="Enter your full name"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Email Address *
+          </label>
+
+          <input
+            type="email"
+            name="Email"
+            placeholder="Enter your email address"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            WhatsApp / Phone *
+          </label>
+
+          <input
+            type="tel"
+            name="Phone"
+            placeholder="+92 300 1234567"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Country *
+          </label>
+
+          <input
+            type="text"
+            name="Country"
+            placeholder="Your country"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            City *
+          </label>
+
+          <input
+            type="text"
+            name="City"
+            placeholder="Your city"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Date of Birth *
+          </label>
+
+          <input
+            type="date"
+            name="Date of Birth"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Occupation / Student *
+          </label>
+
+          <input
+            type="text"
+            name="Occupation"
+            placeholder="Student, professional, entrepreneur..."
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            University / Organization *
+          </label>
+
+          <input
+            type="text"
+            name="Organization"
+            placeholder="University or organization"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            What do you hope to gain from YVGA? *
+          </label>
+
+          <textarea
+            name="What do you hope to gain from YVGA"
+            placeholder="Tell us what you hope to learn, experience or achieve at YVGA..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            Why do you want to participate? *
+          </label>
+
+          <textarea
+            name="Motivation"
+            placeholder="Tell us briefly about your interest in YVGA..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            Instagram / Social Media Profile
+          </label>
+
+          <input
+            type="url"
+            name="Social Media Profile"
+            placeholder="https://instagram.com/your-profile"
+          >
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            How did you hear about YVGA?
+          </label>
+
+          <select name="How did you hear about YVGA">
+
+            <option value="">
+              Select one
+            </option>
+
+            <option>
+              Social Media
+            </option>
+
+            <option>
+              University
+            </option>
+
+            <option>
+              Friend / Colleague
+            </option>
+
+            <option>
+              Search Engine
+            </option>
+
+            <option>
+              Partner Organization
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <label class="consent">
+
+        <input
+          type="checkbox"
+          name="Consent"
+          value="I confirm the information provided is accurate"
+          required
+        >
+
+        <span>
+          I confirm that the information provided is accurate.
+        </span>
+
+      </label>
+
+
+      <button
+        type="submit"
+        class="btn"
+      >
+        SUBMIT REGISTRATION
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section class="contact" id="contact">
 
   <div class="section-title">
@@ -1031,34 +1422,69 @@ onclick="document.getElementById('delegate').style.display='block'; document.get
 
   </div>
 
-  <a class="email" href="mailto:yvga.official@gmail.com">
+  <a
+    class="email"
+    href="mailto:yvga.official@gmail.com"
+  >
     yvga.official@gmail.com
   </a>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
   <div>
-    <strong>Youth Voices Global Assembly</strong><br>
+
+    <strong>
+      Youth Voices Global Assembly
+    </strong>
+
+    <br>
+
     Young Voices. Global Dialogue. Shared Future.
+
   </div>
 
+
   <div>
+
     © 2026 YVGA. All rights reserved.
+
   </div>
 
 </footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
+
 function toggleMenu(){
-  document.getElementById("mobileMenu").classList.toggle("show");
+
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .toggle("show");
+
 }
 
 function closeMenu(){
-  document.getElementById("mobileMenu").classList.remove("show");
+
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .remove("show");
+
 }
+
 </script>
+
 </body>
 </html>
