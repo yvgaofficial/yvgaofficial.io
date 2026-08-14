@@ -1,20 +1,26 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Youth Voices Global Assembly | YVGA</title>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Youth Voices Global Assembly | YVGA 2027</title>
 
 <meta name="description"
-content="Youth Voices Global Assembly — an international youth platform for leadership, dialogue, collaboration and global exchange.">
+content="Youth Voices Global Assembly 2027 — International Youth Assembly in London, United Kingdom.">
 
 <style>
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -24,115 +30,159 @@ html{
 body{
   font-family:Arial,Helvetica,sans-serif;
   color:#172033;
-  line-height:1.6;
   background:#fff;
+  line-height:1.6;
 }
 
-/* =========================
+:root{
+  --navy:#06152b;
+  --navy2:#0b2342;
+  --blue:#438fd9;
+  --blue-dark:#286db3;
+  --gold:#d4b15c;
+  --light:#f5f7fa;
+  --text:#172033;
+  --muted:#667085;
+  --border:#e1e6ed;
+}
+
+
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 nav{
   position:sticky;
   top:0;
   z-index:1000;
-  min-height:86px;
+
+  min-height:82px;
+
   background:#fff;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:10px 5%;
-  box-shadow:0 3px 18px rgba(0,0,0,.10);
+
+  padding:8px 5%;
+
+  box-shadow:0 3px 18px rgba(0,0,0,.12);
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:14px;
+
+  gap:13px;
+
   text-decoration:none;
-  color:#07162d;
+
+  color:var(--navy);
 }
 
 .logo img{
   width:62px;
   height:62px;
+
   object-fit:contain;
-  display:block;
 }
 
 .logo-text{
   display:flex;
   flex-direction:column;
-  line-height:1.15;
+
+  line-height:1.1;
 }
 
-.logo-title{
+.logo-text strong{
   font-size:21px;
   font-weight:900;
-  letter-spacing:.3px;
-  color:#07162d;
 }
 
-.logo-subtitle{
+.logo-text span{
+  color:var(--gold);
+
   font-size:11px;
-  font-weight:700;
+  font-weight:800;
+
   letter-spacing:2px;
-  color:#c49a36;
-  margin-top:4px;
-  text-transform:uppercase;
+
+  margin-top:6px;
 }
 
 .nav-right{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:15px;
 }
 
-.register{
-  background:#07162d;
+.register-top{
+  background:var(--navy);
+
   color:#fff;
+
+  padding:12px 23px;
+
+  border-radius:5px;
+
   text-decoration:none;
-  padding:12px 22px;
-  border-radius:6px;
-  font-size:15px;
-  font-weight:700;
-  transition:.3s;
+
+  font-weight:800;
+
+  cursor:pointer;
 }
 
-.register:hover{
-  background:#c49a36;
+.register-top:hover{
+  background:var(--blue-dark);
 }
 
 .menu{
-  width:54px;
-  height:50px;
-  border:2px solid #07162d;
-  border-radius:7px;
+  width:50px;
+  height:48px;
+
+  border:2px solid var(--navy);
+
+  border-radius:6px;
+
   display:flex;
   flex-direction:column;
+
   justify-content:center;
   align-items:center;
+
   gap:6px;
+
   cursor:pointer;
 }
 
 .menu span{
-  width:29px;
+  width:28px;
   height:2px;
-  background:#07162d;
+
+  background:var(--navy);
 }
 
-/* MOBILE MENU */
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 .mobile-menu{
   display:none;
+
   position:absolute;
-  top:82px;
+
   right:5%;
+  top:82px;
+
+  width:240px;
+
   background:#fff;
-  width:230px;
-  border-radius:10px;
-  box-shadow:0 10px 35px rgba(0,0,0,.18);
+
+  border-radius:8px;
+
+  box-shadow:0 8px 30px rgba(0,0,0,.18);
+
   overflow:hidden;
 }
 
@@ -142,150 +192,181 @@ nav{
 }
 
 .mobile-menu a{
-  padding:15px 20px;
-  color:#172033;
+  color:var(--text);
+
   text-decoration:none;
+
+  padding:14px 20px;
+
   font-weight:700;
+
   border-bottom:1px solid #eee;
+
+  cursor:pointer;
 }
 
 .mobile-menu a:hover{
   background:#f5f7fa;
-  color:#c49a36;
 }
 
-/* =========================
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
-  min-height:760px;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(196,154,54,.20),transparent 30%),
-    linear-gradient(135deg,#020b18,#07162d 55%,#0d2d50);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:100px 6%;
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-}
+  min-height:720px;
 
-.hero:after{
-  content:"";
-  position:absolute;
-  width:500px;
-  height:500px;
-  border:1px solid rgba(196,154,54,.15);
-  border-radius:50%;
-  right:-200px;
-  bottom:-250px;
+  background:
+    linear-gradient(
+      rgba(3,15,31,.82),
+      rgba(3,15,31,.91)
+    ),
+    linear-gradient(
+      135deg,
+      #06152b,
+      #123b6d
+    );
+
+  color:#fff;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+  padding:100px 7%;
 }
 
 .hero-content{
   max-width:1100px;
-  position:relative;
-  z-index:2;
 }
 
 .eyebrow{
-  color:#d4b15c;
+  color:var(--gold);
+
   font-size:14px;
+
   font-weight:800;
+
   letter-spacing:4px;
+
   text-transform:uppercase;
-  margin-bottom:25px;
+
+  margin-bottom:22px;
 }
 
 .hero h1{
-  font-size:clamp(45px,7vw,88px);
+  font-size:clamp(45px,7vw,86px);
+
   line-height:1.02;
+
   font-weight:900;
+
   letter-spacing:1px;
-  text-transform:uppercase;
+
   margin-bottom:30px;
 }
 
 .hero h1 span{
-  color:#d4b15c;
+  color:var(--gold);
 }
 
 .hero p{
-  max-width:780px;
+  max-width:820px;
+
   margin:auto;
-  color:#dce5f1;
+
+  color:#dce6f2;
+
   font-size:19px;
 }
 
+.hero-info{
+  margin:35px auto 0;
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+}
+
+.info-box{
+  border:1px solid rgba(255,255,255,.25);
+
+  background:rgba(255,255,255,.07);
+
+  padding:14px 23px;
+
+  border-radius:5px;
+
+  min-width:170px;
+}
+
+.info-box strong{
+  display:block;
+
+  color:#fff;
+}
+
+.info-box span{
+  color:#c9d5e5;
+
+  font-size:14px;
+}
+
 .hero-buttons{
-  margin-top:38px;
+  margin-top:35px;
 }
 
 .btn{
   display:inline-block;
-  text-decoration:none;
+
   padding:14px 28px;
-  border-radius:6px;
+
+  border-radius:5px;
+
+  text-decoration:none;
+
   font-weight:800;
+
   margin:5px;
-  transition:.3s;
-  border:none;
+
+  cursor:pointer;
 }
 
 .btn-primary{
-  background:#438fd9;
+  background:var(--blue);
+
   color:#fff;
 }
 
-.btn-primary:hover{
-  background:#d4b15c;
-  color:#07162d;
+.btn-gold{
+  background:var(--gold);
+
+  color:var(--navy);
 }
 
 .btn-outline{
   border:2px solid #fff;
+
   color:#fff;
 }
 
-.btn-outline:hover{
-  background:#fff;
-  color:#07162d;
+.btn-primary:hover{
+  background:var(--blue-dark);
 }
 
-/* =========================
-   INTRO
-========================= */
 
-.intro{
-  padding:95px 7%;
-  text-align:center;
-  background:#fff;
-}
-
-.intro h2{
-  font-size:clamp(38px,5vw,60px);
-  line-height:1.1;
-  color:#07162d;
-  text-transform:uppercase;
-  margin-bottom:25px;
-}
-
-.intro h2 span{
-  color:#438fd9;
-}
-
-.intro p{
-  max-width:800px;
-  margin:auto;
-  color:#667085;
-  font-size:18px;
-}
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* =========================================================
+   GENERAL
+========================================================= */
 
 section{
   padding:90px 7%;
@@ -293,71 +374,127 @@ section{
 
 .section-title{
   text-align:center;
-  margin-bottom:55px;
-}
 
-.section-title .eyebrow{
-  color:#438fd9;
+  max-width:850px;
+
+  margin:0 auto 55px;
 }
 
 .section-title h2{
-  font-size:clamp(35px,5vw,52px);
-  color:#07162d;
+  color:var(--navy);
+
+  font-size:clamp(36px,5vw,55px);
+
   line-height:1.1;
+
+  margin-bottom:18px;
 }
 
 .section-title p{
-  max-width:760px;
-  margin:18px auto 0;
-  color:#667085;
+  color:var(--muted);
+
   font-size:18px;
 }
 
-/* =========================
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+  text-align:center;
+
+  background:#fff;
+}
+
+.intro h2{
+  font-size:clamp(38px,5vw,60px);
+
+  line-height:1.1;
+
+  color:var(--navy);
+
+  margin-bottom:25px;
+}
+
+.intro h2 span{
+  color:var(--blue);
+}
+
+.intro p{
+  max-width:820px;
+
+  margin:auto;
+
+  color:var(--muted);
+
+  font-size:18px;
+}
+
+
+/* =========================================================
    CARDS
-========================= */
+========================================================= */
 
 .cards{
   max-width:1100px;
+
   margin:auto;
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+  repeat(3,1fr);
+
   gap:25px;
 }
 
 .card{
-  padding:35px;
-  border:1px solid #e5e9ef;
-  border-radius:12px;
   background:#fff;
-  box-shadow:0 8px 28px rgba(7,22,45,.07);
-  transition:.3s;
+
+  border:1px solid var(--border);
+
+  border-radius:10px;
+
+  padding:32px;
+
+  box-shadow:
+  0 8px 25px rgba(0,0,0,.05);
+
   text-decoration:none;
-  display:block;
+
+  color:inherit;
+
+  transition:.2s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 35px rgba(7,22,45,.12);
-  border-color:#438fd9;
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,.09);
 }
 
 .card h3{
-  color:#07162d;
-  font-size:22px;
+  color:var(--navy);
+
+  font-size:23px;
+
   margin-bottom:12px;
 }
 
 .card p{
-  color:#667085;
+  color:var(--muted);
 }
 
-/* =========================
-   CONFERENCE
-========================= */
+
+/* =========================================================
+   ASSEMBLY
+========================================================= */
 
 .assembly{
-  background:#07162d;
+  background:var(--navy);
+
   color:#fff;
 }
 
@@ -371,118 +508,231 @@ section{
 
 .facts{
   max-width:1100px;
+
   margin:auto;
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:15px;
 }
 
 .fact{
-  border:1px solid #31405a;
+  border:1px solid #31445f;
+
   padding:30px 20px;
+
   text-align:center;
-  border-radius:10px;
-  background:rgba(255,255,255,.025);
+
+  border-radius:8px;
+
+  background:rgba(255,255,255,.03);
 }
 
 .fact strong{
   display:block;
-  color:#d4b15c;
+
+  color:var(--gold);
+
   font-size:28px;
+
   margin-bottom:5px;
 }
 
-/* =========================
+
+/* =========================================================
    PROGRAMME
-========================= */
+========================================================= */
 
 .programme{
   max-width:850px;
+
   margin:auto;
+}
+
+.day{
+  margin-bottom:35px;
+}
+
+.day-title{
+  background:var(--navy);
+
+  color:#fff;
+
+  padding:15px 20px;
+
+  border-radius:6px;
+
+  font-size:19px;
+
+  font-weight:800;
+
+  margin-bottom:5px;
 }
 
 .step{
   display:flex;
+
   gap:20px;
-  padding:24px 0;
-  border-bottom:1px solid #e3e7ed;
+
+  padding:22px 5px;
+
+  border-bottom:1px solid var(--border);
 }
 
 .number{
   min-width:44px;
+
   height:44px;
+
   border-radius:50%;
-  background:#438fd9;
+
+  background:var(--blue);
+
   color:#fff;
+
   display:grid;
+
   place-items:center;
-  font-weight:800;
+
+  font-weight:900;
 }
 
 .step h3{
-  color:#07162d;
-  margin-bottom:4px;
+  color:var(--navy);
+
+  margin-bottom:5px;
 }
 
 .step p{
-  color:#667085;
+  color:var(--muted);
 }
 
-/* =========================
-   REGISTRATION
-========================= */
 
-.join{
+/* =========================================================
+   PARTICIPATION
+========================================================= */
+
+.participation{
   background:#f5f7fa;
 }
 
-.join-box{
-  max-width:1050px;
-  margin:auto;
-  background:linear-gradient(135deg,#07162d,#0d3157);
-  color:#fff;
+.category{
   text-align:center;
-  padding:70px 35px;
-  border-radius:15px;
-  box-shadow:0 15px 40px rgba(7,22,45,.15);
 }
 
-.join-box h2{
-  font-size:clamp(35px,5vw,50px);
-  line-height:1.1;
-  margin-bottom:15px;
+.category-icon{
+  width:60px;
+
+  height:60px;
+
+  border-radius:50%;
+
+  background:var(--navy);
+
+  color:var(--gold);
+
+  display:grid;
+
+  place-items:center;
+
+  font-size:24px;
+
+  font-weight:900;
+
+  margin:0 auto 18px;
 }
 
-.join-box p{
-  max-width:700px;
+
+/* =========================================================
+   REGISTRATION
+   HIDDEN BY DEFAULT
+========================================================= */
+
+.registration{
+  background:#eef3f8;
+
+  display:none;
+}
+
+.registration.show{
+  display:block;
+}
+
+.registration-box{
+  max-width:1050px;
+
   margin:auto;
-  color:#dce5f1;
-}
 
-.join-box .btn{
-  background:#d4b15c;
-  color:#07162d;
-  margin-top:25px;
-}
-
-.join-box .btn:hover{
   background:#fff;
+
+  border-radius:12px;
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,.08);
+
+  overflow:hidden;
 }
 
-/* FORM */
+.registration-header{
+  background:var(--navy);
+
+  color:#fff;
+
+  padding:45px 35px;
+
+  text-align:center;
+}
+
+.registration-header h2{
+  font-size:42px;
+
+  margin-bottom:10px;
+}
+
+.registration-header p{
+  color:#d5dfeb;
+
+  max-width:760px;
+
+  margin:auto;
+}
+
+.registration-form{
+  padding:40px;
+}
+
+.form-section-title{
+  color:var(--navy);
+
+  font-size:22px;
+
+  font-weight:900;
+
+  border-bottom:
+  2px solid var(--gold);
+
+  padding-bottom:10px;
+
+  margin:25px 0 22px;
+}
 
 .form-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  max-width:900px;
-  margin:35px auto 20px;
-  text-align:left;
+
+  grid-template-columns:
+  1fr 1fr;
+
+  gap:20px;
 }
 
 .form-group{
   display:flex;
+
   flex-direction:column;
+
   gap:7px;
 }
 
@@ -492,87 +742,191 @@ section{
 
 .form-group label{
   font-weight:700;
-  color:#fff;
+
+  color:var(--text);
+}
+
+.required{
+  color:#c62828;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
   width:100%;
+
   padding:14px;
-  border:1px solid #d9dee7;
-  border-radius:7px;
-  font-family:Arial,sans-serif;
+
+  border:
+  1px solid #d5dce5;
+
+  border-radius:6px;
+
   font-size:15px;
+
+  font-family:Arial,sans-serif;
+
   background:#fff;
-  color:#172033;
+
+  outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+  border-color:var(--blue);
+
+  box-shadow:
+  0 0 0 2px
+  rgba(67,143,217,.12);
 }
 
 .form-group textarea{
-  min-height:130px;
+  min-height:125px;
+
   resize:vertical;
 }
 
-.consent{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  max-width:900px;
-  margin:20px auto;
-  font-size:14px;
-  color:#dce5f1;
-  text-align:left;
+.help-text{
+  font-size:13px;
+
+  color:#7b8492;
 }
 
-.consent input{
+.checkbox-group{
+  display:flex;
+
+  gap:10px;
+
+  align-items:flex-start;
+
+  margin-top:18px;
+}
+
+.checkbox-group input{
   margin-top:5px;
 }
 
-.join-box form .btn{
+.checkbox-group label{
+  color:#596579;
+
+  font-size:14px;
+}
+
+.submit-area{
+  text-align:center;
+
+  margin-top:35px;
+}
+
+.submit-btn{
+  border:0;
+
+  background:var(--navy);
+
+  color:#fff;
+
+  padding:16px 35px;
+
+  border-radius:5px;
+
+  font-weight:800;
+
+  font-size:16px;
+
   cursor:pointer;
 }
 
-/* =========================
-   PARTNERS
-========================= */
+.submit-btn:hover{
+  background:#102c4f;
+}
 
-#partners{
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.register-cta{
+  background:
+  linear-gradient(
+    135deg,
+    #06152b,
+    #123b6d
+  );
+
+  color:#fff;
+
+  text-align:center;
+}
+
+.register-cta h2{
+  color:#fff;
+
+  font-size:
+  clamp(35px,5vw,55px);
+
+  margin-bottom:15px;
+}
+
+.register-cta p{
+  max-width:720px;
+
+  margin:auto;
+
+  color:#d5dfeb;
+}
+
+
+/* =========================================================
+   PARTNERS
+========================================================= */
+
+.partners{
   background:#fff;
 }
 
-/* =========================
+
+/* =========================================================
    CONTACT
-========================= */
+========================================================= */
 
 .contact{
   text-align:center;
-  background:#f8fafc;
 }
 
 .email{
   display:inline-block;
+
   margin-top:20px;
-  color:#438fd9;
+
+  color:var(--blue);
+
   font-size:20px;
+
   font-weight:800;
+
   text-decoration:none;
 }
 
-.email:hover{
-  color:#c49a36;
-}
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
-  background:#030b17;
+  background:#040d1b;
+
   color:#aeb8c8;
+
   padding:45px 7%;
+
   display:flex;
+
   justify-content:space-between;
+
   gap:20px;
+
   flex-wrap:wrap;
 }
 
@@ -580,42 +934,37 @@ footer strong{
   color:#fff;
 }
 
-/* =========================
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:800px){
 
   nav{
     min-height:72px;
-    padding:8px 5%;
+
+    padding:7px 5%;
   }
 
   .logo img{
     width:50px;
+
     height:50px;
   }
 
-  .logo-title{
+  .logo-text strong{
     font-size:16px;
   }
 
-  .logo-subtitle{
+  .logo-text span{
     font-size:8px;
-    letter-spacing:1.3px;
+
+    letter-spacing:1.2px;
   }
 
-  .register{
+  .register-top{
     display:none;
-  }
-
-  .menu{
-    width:48px;
-    height:45px;
-  }
-
-  .menu span{
-    width:26px;
   }
 
   .mobile-menu{
@@ -624,15 +973,21 @@ footer strong{
 
   .hero{
     min-height:680px;
-    padding:75px 5%;
+
+    padding:80px 5%;
   }
 
   .hero h1{
-    font-size:clamp(40px,12vw,65px);
+    font-size:
+    clamp(40px,11vw,65px);
   }
 
   .hero p{
     font-size:16px;
+  }
+
+  .hero-info{
+    flex-direction:column;
   }
 
   .cards{
@@ -640,7 +995,8 @@ footer strong{
   }
 
   .facts{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+    1fr 1fr;
   }
 
   .form-grid{
@@ -651,9 +1007,18 @@ footer strong{
     grid-column:auto;
   }
 
-  .join-box{
-    padding:55px 20px;
+  .registration-form{
+    padding:25px 20px;
   }
+
+  .registration-header{
+    padding:35px 20px;
+  }
+
+  .registration-header h2{
+    font-size:34px;
+  }
+
 }
 
 @media(max-width:480px){
@@ -662,829 +1027,1903 @@ footer strong{
     padding:65px 6%;
   }
 
-  .logo-title{
-    font-size:14px;
-  }
-
-  .logo-subtitle{
-    font-size:7px;
-  }
-
-  .logo img{
-    width:45px;
-    height:45px;
-  }
-
   .facts{
     grid-template-columns:1fr;
   }
 
   footer{
     text-align:center;
+
     justify-content:center;
   }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
 <nav>
 
-  <a href="#home" class="logo">
+<a href="#home" class="logo">
 
-    <img src="./yvga-logo.png.png" alt="YVGA Logo">
+<img
+src="./yvga-logo.png.png"
+alt="Youth Voices Global Assembly Logo"
+>
 
-    <div class="logo-text">
-      <div class="logo-title">
-        Youth Voices Global Assembly
-      </div>
+<div class="logo-text">
 
-      <div class="logo-subtitle">
-        Youth Leadership • Global Dialogue • Shared Future
-      </div>
-    </div>
+<strong>
+Youth Voices Global Assembly
+</strong>
 
-  </a>
+<span>
+INTERNATIONAL YOUTH PLATFORM
+</span>
 
-  <div class="nav-right">
+</div>
 
-    <a href="#delegate" class="register">
-      Register Now
-    </a>
+</a>
 
-    <div class="menu" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
 
-  </div>
+<div class="nav-right">
 
-  <div id="mobileMenu" class="mobile-menu">
+<a
+href="#registration"
+class="register-top"
+onclick="openRegistration(); return false;"
+>
+Register Now
+</a>
 
-    <a href="#home" onclick="closeMenu()">Home</a>
 
-    <a href="#about" onclick="closeMenu()">About</a>
+<div
+class="menu"
+onclick="toggleMenu()"
+>
 
-    <a href="#assembly" onclick="closeMenu()">Conference</a>
+<span></span>
+<span></span>
+<span></span>
 
-    <a href="#programme" onclick="closeMenu()">Programme</a>
+</div>
 
-    <a href="#partners" onclick="closeMenu()">Partnerships</a>
 
-    <a href="#delegate" onclick="closeMenu()">Register</a>
+<div
+id="mobileMenu"
+class="mobile-menu"
+>
 
-    <a href="#contact" onclick="closeMenu()">Contact</a>
+<a href="#home" onclick="closeMenu()">
+Home
+</a>
 
-  </div>
+<a href="#about" onclick="closeMenu()">
+About YVGA
+</a>
+
+<a href="#assembly" onclick="closeMenu()">
+Conference
+</a>
+
+<a href="#programme" onclick="closeMenu()">
+Programme
+</a>
+
+<a
+href="#registration"
+onclick="openRegistration(); return false;"
+>
+Register
+</a>
+
+<a href="#partners" onclick="closeMenu()">
+Partners
+</a>
+
+<a href="#contact" onclick="closeMenu()">
+Contact
+</a>
+
+</div>
+
+</div>
 
 </nav>
 
 
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
-<header class="hero" id="home">
+<header
+class="hero"
+id="home"
+>
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <div class="eyebrow">
-      International Youth Platform
-    </div>
+<div class="eyebrow">
+International Youth Assembly
+</div>
 
-    <h1>
-      YOUTH VOICES.<br>
-      <span>GLOBAL DIALOGUE,</span><br>
-      LEADERSHIP &<br>
-      SHARED FUTURE.
-    </h1>
 
-    <p>
-      Youth Voices Global Assembly is a proposed international
-      platform connecting young people across borders through
-      dialogue, leadership, collaboration and exchange.
-    </p>
+<h1>
 
-    <div class="hero-buttons">
+YOUTH VOICES.<br>
 
-      <a href="#assembly" class="btn btn-primary">
-        Explore Conference
-      </a>
+<span>GLOBAL DIALOGUE.</span><br>
 
-      <a href="#delegate" class="btn btn-outline">
-        Register Interest
-      </a>
+LEADERSHIP &<br>
 
-    </div>
+SHARED FUTURE.
 
-  </div>
+</h1>
+
+
+<p>
+
+Youth Voices Global Assembly is a proposed international
+youth platform bringing together young leaders, students,
+professionals, innovators and changemakers from different
+countries for dialogue, leadership and collaboration.
+
+</p>
+
+
+<div class="hero-info">
+
+
+<div class="info-box">
+
+<strong>
+18–22 January 2027
+</strong>
+
+<span>
+Five-Day Assembly
+</span>
+
+</div>
+
+
+<div class="info-box">
+
+<strong>
+London
+</strong>
+
+<span>
+United Kingdom
+</span>
+
+</div>
+
+
+<div class="info-box">
+
+<strong>
+International
+</strong>
+
+<span>
+Youth Participation
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="hero-buttons">
+
+<a
+href="#assembly"
+class="btn btn-primary"
+>
+Explore Conference
+</a>
+
+
+<a
+href="#registration"
+class="btn btn-gold"
+onclick="openRegistration(); return false;"
+>
+Register Interest
+</a>
+
+</div>
+
+</div>
 
 </header>
 
 
-<!-- =========================
+<!-- =========================================================
      INTRO
-========================= -->
+========================================================= -->
 
 <section class="intro">
 
-  <h2>
-    WE DEVELOP <span>GLOBAL</span><br>
-    YOUTH LEADERS.
-  </h2>
+<h2>
 
-  <p>
-    YVGA aims to bring together emerging leaders, students,
-    changemakers and young professionals to discuss the issues
-    shaping their generation and build meaningful international
-    connections.
-  </p>
+WE DEVELOP
+<span>GLOBAL</span><br>
+
+YOUTH LEADERS.
+
+</h2>
+
+
+<p>
+
+YVGA aims to create an international space where young
+people can exchange ideas, develop leadership skills,
+build international relationships and contribute to
+constructive global dialogue.
+
+</p>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      ABOUT
-========================= -->
+========================================================= -->
 
 <section id="about">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <div class="eyebrow">
-      About YVGA
-    </div>
+<div class="eyebrow">
+About YVGA
+</div>
 
-    <h2>
-      A Platform For Youth Voices
-    </h2>
+<h2>
+A Platform For Youth Voices
+</h2>
 
-    <p>
-      Creating opportunities for young people to connect,
-      communicate and contribute to a shared global future.
-    </p>
+<p>
 
-  </div>
+Creating opportunities for young people to connect,
+communicate and contribute to a shared global future.
 
-  <div class="cards">
+</p>
 
-    <div class="card">
+</div>
 
-      <h3>
-        Youth Leadership
-      </h3>
 
-      <p>
-        Develop leadership skills, confidence and responsible
-        global citizenship.
-      </p>
+<div class="cards">
 
-    </div>
 
-    <div class="card">
+<div class="card">
 
-      <h3>
-        Global Dialogue
-      </h3>
+<h3>
+Youth Leadership
+</h3>
 
-      <p>
-        Exchange ideas across cultures, communities and
-        countries.
-      </p>
+<p>
 
-    </div>
+Develop leadership skills, confidence and responsible
+global citizenship through meaningful discussions and
+practical experiences.
 
-    <div class="card">
+</p>
 
-      <h3>
-        International Collaboration
-      </h3>
+</div>
 
-      <p>
-        Build relationships that can lead to practical youth-led
-        initiatives.
-      </p>
 
-    </div>
+<div class="card">
 
-  </div>
+<h3>
+Global Dialogue
+</h3>
+
+<p>
+
+Exchange ideas across cultures, communities and countries
+while learning from different perspectives.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+International Collaboration
+</h3>
+
+<p>
+
+Build relationships and partnerships that can support
+future youth-led initiatives and projects.
+
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      CONFERENCE
-========================= -->
+========================================================= -->
 
-<section class="assembly" id="assembly">
+<section
+class="assembly"
+id="assembly"
+>
 
-  <div class="section-title">
+<div class="section-title">
 
-    <div class="eyebrow">
-      Proposed Flagship Event
-    </div>
+<div class="eyebrow">
+Proposed Flagship Event
+</div>
 
-    <h2>
-      Youth Voices Global Assembly 2027
-    </h2>
+<h2>
+Youth Voices Global Assembly 2027
+</h2>
 
-    <p>
-      A proposed one-day international youth conference in
-      London, United Kingdom.
-    </p>
+<p>
 
-  </div>
+A proposed five-day international youth assembly in
+London, United Kingdom.
 
-  <div class="facts">
+</p>
 
-    <div class="fact">
-      <strong>2027</strong>
-      Planned Year
-    </div>
+</div>
 
-    <div class="fact">
-      <strong>London</strong>
-      United Kingdom
-    </div>
 
-    <div class="fact">
-      <strong>1 Day</strong>
-      Conference
-    </div>
+<div class="facts">
 
-    <div class="fact">
-      <strong>Global</strong>
-      Youth Participation
-    </div>
 
-  </div>
+<div class="fact">
+
+<strong>
+18–22
+</strong>
+
+January 2027
+
+</div>
+
+
+<div class="fact">
+
+<strong>
+5 Days
+</strong>
+
+International Assembly
+
+</div>
+
+
+<div class="fact">
+
+<strong>
+London
+</strong>
+
+United Kingdom
+
+</div>
+
+
+<div class="fact">
+
+<strong>
+Global
+</strong>
+
+Youth Participation
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      PROGRAMME
-========================= -->
+========================================================= -->
 
 <section id="programme">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <div class="eyebrow">
-      Proposed Programme
-    </div>
+<div class="eyebrow">
+Proposed Five-Day Programme
+</div>
 
-    <h2>
-      Dialogue With Purpose
-    </h2>
+<h2>
+Five Days. One Global Youth Platform.
+</h2>
 
-    <p>
-      A programme designed around leadership, diplomacy,
-      international dialogue and youth collaboration.
-    </p>
+<p>
 
-  </div>
+A programme built around leadership, dialogue,
+international cooperation, networking and youth
+participation.
 
-  <div class="programme">
+</p>
 
-    <div class="step">
+</div>
 
-      <div class="number">1</div>
 
-      <div>
-        <h3>Opening Ceremony</h3>
-        <p>
-          Welcome and introduction to the Assembly.
-        </p>
-      </div>
+<div class="programme">
 
-    </div>
 
-    <div class="step">
+<!-- DAY 1 -->
 
-      <div class="number">2</div>
+<div class="day">
 
-      <div>
-        <h3>The Youth Voice</h3>
-        <p>
-          Leadership, diplomacy and global dialogue.
-        </p>
-      </div>
+<div class="day-title">
+DAY 1 — OPENING & GLOBAL CONNECTION
+</div>
 
-    </div>
 
-    <div class="step">
+<div class="step">
 
-      <div class="number">3</div>
+<div class="number">
+1
+</div>
 
-      <div>
-        <h3>Global Panel</h3>
-        <p>
-          Education, technology, entrepreneurship and
-          sustainable development.
-        </p>
-      </div>
+<div>
 
-    </div>
+<h3>
+Opening Ceremony
+</h3>
 
-    <div class="step">
+<p>
+Welcome, introduction to YVGA and opening remarks.
+</p>
 
-      <div class="number">4</div>
+</div>
 
-      <div>
-        <h3>Youth Dialogue & Networking</h3>
-        <p>
-          Interactive discussions and international connections.
-        </p>
-      </div>
+</div>
 
-    </div>
 
-    <div class="step">
+<div class="step">
 
-      <div class="number">5</div>
+<div class="number">
+2
+</div>
 
-      <div>
-        <h3>Closing & Recognition</h3>
-        <p>
-          Reflections, commitments and next steps.
-        </p>
-      </div>
+<div>
 
-    </div>
+<h3>
+Meet the Global Youth Community
+</h3>
 
-  </div>
+<p>
+Introduction and networking between participating delegates.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+3
+</div>
+
+<div>
+
+<h3>
+Welcome Reception
+</h3>
+
+<p>
+Informal networking and international cultural exchange.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DAY 2 -->
+
+<div class="day">
+
+<div class="day-title">
+DAY 2 — YOUTH LEADERSHIP
+</div>
+
+
+<div class="step">
+
+<div class="number">
+4
+</div>
+
+<div>
+
+<h3>
+Youth Leadership Forum
+</h3>
+
+<p>
+Leadership, confidence, responsibility and global citizenship.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+5
+</div>
+
+<div>
+
+<h3>
+Leadership Workshops
+</h3>
+
+<p>
+Interactive sessions focused on practical leadership development.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DAY 3 -->
+
+<div class="day">
+
+<div class="day-title">
+DAY 3 — GLOBAL DIALOGUE
+</div>
+
+
+<div class="step">
+
+<div class="number">
+6
+</div>
+
+<div>
+
+<h3>
+Global Youth Dialogue
+</h3>
+
+<p>
+Young people exchange perspectives on international challenges.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+7
+</div>
+
+<div>
+
+<h3>
+International Panel Discussions
+</h3>
+
+<p>
+Dialogue with invited speakers, experts and youth representatives.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DAY 4 -->
+
+<div class="day">
+
+<div class="day-title">
+DAY 4 — COLLABORATION & INNOVATION
+</div>
+
+
+<div class="step">
+
+<div class="number">
+8
+</div>
+
+<div>
+
+<h3>
+Youth Innovation Sessions
+</h3>
+
+<p>
+Ideas, entrepreneurship, technology and youth-led solutions.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+9
+</div>
+
+<div>
+
+<h3>
+International Networking
+</h3>
+
+<p>
+Structured networking and collaboration opportunities.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DAY 5 -->
+
+<div class="day">
+
+<div class="day-title">
+DAY 5 — COMMITMENT & CLOSING
+</div>
+
+
+<div class="step">
+
+<div class="number">
+10
+</div>
+
+<div>
+
+<h3>
+Youth Commitments
+</h3>
+
+<p>
+Delegates develop ideas and commitments for future action.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+11
+</div>
+
+<div>
+
+<h3>
+Closing Ceremony
+</h3>
+
+<p>
+Reflections, recognition and closing remarks.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+12
+</div>
+
+<div>
+
+<h3>
+Certificate & Farewell
+</h3>
+
+<p>
+Recognition of participating delegates and closing networking.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
+     PARTICIPATION
+========================================================= -->
+
+<section class="participation">
+
+<div class="section-title">
+
+<div class="eyebrow">
+Who Can Participate
+</div>
+
+<h2>
+Youth From Around The World
+</h2>
+
+<p>
+
+YVGA welcomes motivated young people interested in
+leadership, dialogue, innovation and international
+collaboration.
+
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card category">
+
+<div class="category-icon">
+Y
+</div>
+
+<h3>
+Youth Leaders
+</h3>
+
+<p>
+
+Young people involved in leadership, community initiatives
+and youth development.
+
+</p>
+
+</div>
+
+
+<div class="card category">
+
+<div class="category-icon">
+S
+</div>
+
+<h3>
+Students
+</h3>
+
+<p>
+
+University and college students interested in global issues,
+leadership and international exchange.
+
+</p>
+
+</div>
+
+
+<div class="card category">
+
+<div class="category-icon">
+C
+</div>
+
+<h3>
+Young Professionals & Changemakers
+</h3>
+
+<p>
+
+Young entrepreneurs, professionals, innovators and community
+changemakers.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     REGISTRATION FORM
+     HIDDEN UNTIL REGISTER NOW
+========================================================= -->
+
+<section
+class="registration"
+id="registration"
+>
+
+<div class="registration-box">
+
+
+<div class="registration-header">
+
+<div class="eyebrow">
+YVGA DELEGATE APPLICATION
+</div>
+
+<h2>
+Register Your Interest
+</h2>
+
+<p>
+
+Complete the delegate application below to express your
+interest in participating in the Youth Voices Global
+Assembly 2027.
+
+</p>
+
+</div>
+
+
+<div class="registration-form">
+
+
+<form
+action="https://formsubmit.co/yvga.official@gmail.com"
+method="POST"
+>
+
+
+<!-- FORM SUBMIT SETTINGS -->
+
+<input
+type="hidden"
+name="_subject"
+value="YVGA 2027 — New Delegate Application"
+>
+
+<input
+type="hidden"
+name="_template"
+value="table"
+>
+
+<input
+type="hidden"
+name="_captcha"
+value="false"
+>
+
+<input
+type="hidden"
+name="_next"
+value="https://yvga.co.uk/"
+>
+
+
+<!-- =====================================================
+     AUTOMATIC CONFIRMATION EMAIL
+===================================================== -->
+
+<input
+type="hidden"
+name="_autoresponse"
+value="Dear Applicant,
+
+Thank you for submitting your application for the Youth Voices Global Assembly 2027.
+
+We have successfully received your delegate application.
+
+CONFERENCE:
+Youth Voices Global Assembly 2027
+
+DATE:
+18–22 January 2027
+
+LOCATION:
+London, United Kingdom
+
+Your application has been forwarded to the YVGA team for review.
+
+Please note that submitting an application does not automatically guarantee participation or attendance at the conference.
+
+Further information will be provided by the YVGA team after your application has been reviewed.
+
+For enquiries, please contact:
+
+yvga.official@gmail.com
+
+Kind regards,
+
+Youth Voices Global Assembly
+YVGA
+
+Young Voices. Global Dialogue. Shared Future."
+>
+
+
+<!-- =====================================================
+     PERSONAL INFORMATION
+===================================================== -->
+
+<div class="form-section-title">
+1. Personal Information
+</div>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+First Name <span class="required">*</span>
+</label>
+
+<input
+type="text"
+name="First Name"
+placeholder="Enter your first name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Last Name <span class="required">*</span>
+</label>
+
+<input
+type="text"
+name="Last Name"
+placeholder="Enter your last name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Email Address <span class="required">*</span>
+</label>
+
+<input
+type="email"
+name="Email"
+placeholder="Enter your email address"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Phone / WhatsApp <span class="required">*</span>
+</label>
+
+<input
+type="tel"
+name="Phone"
+placeholder="+92 300 1234567"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Date of Birth <span class="required">*</span>
+</label>
+
+<input
+type="date"
+name="Date of Birth"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Gender
+</label>
+
+<select name="Gender">
+
+<option value="">
+Select
+</option>
+
+<option>
+Male
+</option>
+
+<option>
+Female
+</option>
+
+<option>
+Prefer not to say
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Country of Residence <span class="required">*</span>
+</label>
+
+<input
+type="text"
+name="Country"
+placeholder="Enter your country"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+City <span class="required">*</span>
+</label>
+
+<input
+type="text"
+name="City"
+placeholder="Enter your city"
+required
+>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<div class="form-section-title">
+2. Education & Professional Information
+</div>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Participation Category <span class="required">*</span>
+</label>
+
+<select
+name="Participation Category"
+required
+>
+
+<option value="">
+Select category
+</option>
+
+<option>
+Youth Leader
+</option>
+
+<option>
+Student
+</option>
+
+<option>
+Young Professional
+</option>
+
+<option>
+Entrepreneur
+</option>
+
+<option>
+NGO / Community Representative
+</option>
+
+<option>
+Researcher
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Current Status <span class="required">*</span>
+</label>
+
+<select
+name="Current Status"
+required
+>
+
+<option value="">
+Select status
+</option>
+
+<option>
+Student
+</option>
+
+<option>
+Employed
+</option>
+
+<option>
+Self-employed
+</option>
+
+<option>
+Entrepreneur
+</option>
+
+<option>
+Volunteer
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+University / Institution / Organization
+</label>
+
+<input
+type="text"
+name="University or Organization"
+placeholder="Enter institution or organization"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Field of Study / Profession
+</label>
+
+<input
+type="text"
+name="Field of Study or Profession"
+placeholder="e.g. Business, Technology, Law"
+>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+Leadership / Community Experience
+</label>
+
+<textarea
+name="Leadership Experience"
+placeholder="Briefly describe your leadership, volunteer, community or youth-related experience."
+></textarea>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     CONFERENCE PARTICIPATION
+===================================================== -->
+
+<div class="form-section-title">
+3. Conference Participation
+</div>
+
+
+<div class="form-grid">
+
+
+<div class="form-group full">
+
+<label>
+Why do you want to participate in YVGA?
+<span class="required">*</span>
+</label>
+
+<textarea
+name="Motivation"
+placeholder="Tell us why you would like to participate in the Youth Voices Global Assembly."
+required
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+What do you hope to gain from YVGA?
+<span class="required">*</span>
+</label>
+
+<textarea
+name="Expected Outcomes"
+placeholder="Tell us what you hope to learn, experience or achieve."
+required
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+Area of Interest / Contribution
+</label>
+
+<textarea
+name="Area of Interest or Contribution"
+placeholder="Tell us about an area you are interested in discussing, sharing or contributing to at YVGA."
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Interested in Speaker / Panelist Opportunity?
+</label>
+
+<select
+name="Speaker or Panelist Interest"
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+Yes
+</option>
+
+<option>
+Maybe
+</option>
+
+<option>
+No
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Have you attended an international conference before?
+</label>
+
+<select
+name="Previous Conference Experience"
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+Yes
+</option>
+
+<option>
+No
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+If yes, please mention the conference
+</label>
+
+<input
+type="text"
+name="Previous Conferences"
+placeholder="Conference name"
+>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ADDITIONAL INFORMATION
+===================================================== -->
+
+<div class="form-section-title">
+4. Additional Information
+</div>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+How did you hear about YVGA?
+</label>
+
+<select
+name="How did you hear about YVGA"
+>
+
+<option value="">
+Select one
+</option>
+
+<option>
+Social Media
+</option>
+
+<option>
+University / Institution
+</option>
+
+<option>
+Friend / Colleague
+</option>
+
+<option>
+Search Engine
+</option>
+
+<option>
+Partner Organization
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Social Media / LinkedIn Profile
+</label>
+
+<input
+type="url"
+name="Social Media Profile"
+placeholder="https://linkedin.com/in/your-profile"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Dietary Requirements
+</label>
+
+<select
+name="Dietary Requirements"
+>
+
+<option value="">
+No special requirement
+</option>
+
+<option>
+Vegetarian
+</option>
+
+<option>
+Vegan
+</option>
+
+<option>
+Halal
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Accessibility Requirements
+</label>
+
+<select
+name="Accessibility Requirements"
+>
+
+<option value="">
+No assistance required
+</option>
+
+<option>
+Yes
+</option>
+
+<option>
+Prefer to discuss
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+Additional Information
+</label>
+
+<textarea
+name="Additional Information"
+placeholder="Is there anything else you would like the YVGA team to know?"
+></textarea>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     DECLARATION
+===================================================== -->
+
+<div class="form-section-title">
+5. Declaration
+</div>
+
+
+<div class="checkbox-group">
+
+<input
+type="checkbox"
+name="Information Confirmation"
+value="Confirmed"
+required
+>
+
+<label>
+
+I confirm that the information provided in this application
+is accurate to the best of my knowledge.
+
+<span class="required">*</span>
+
+</label>
+
+</div>
+
+
+<div class="checkbox-group">
+
+<input
+type="checkbox"
+name="Application Understanding"
+value="Understood"
+required
+>
+
+<label>
+
+I understand that submitting this application does not
+automatically guarantee participation or attendance at
+YVGA 2027.
+
+<span class="required">*</span>
+
+</label>
+
+</div>
+
+
+<div class="checkbox-group">
+
+<input
+type="checkbox"
+name="Communication Consent"
+value="Yes"
+>
+
+<label>
+
+I would like to receive updates and information from
+Youth Voices Global Assembly regarding the conference
+and related opportunities.
+
+</label>
+
+</div>
+
+
+<div class="submit-area">
+
+<button
+type="submit"
+class="submit-btn"
+>
+SUBMIT DELEGATE APPLICATION
+</button>
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="register-cta">
+
+<div class="section-title">
+
+<div class="eyebrow">
+YVGA 2027
+</div>
+
+<h2>
+Be Part of the Global Youth Dialogue
+</h2>
+
+<p>
+
+Express your interest in participating in the Youth Voices
+Global Assembly 2027 in London.
+
+</p>
+
+
+<div style="margin-top:25px;">
+
+<a
+href="#registration"
+class="btn btn-gold"
+onclick="openRegistration(); return false;"
+>
+REGISTER NOW
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
      PARTNERS
-========================= -->
+========================================================= -->
 
-<section id="partners">
+<section
+class="partners"
+id="partners"
+>
 
-  <div class="section-title">
+<div class="section-title">
 
-    <div class="eyebrow">
-      Partnerships
-    </div>
+<div class="eyebrow">
+Partnerships
+</div>
 
-    <h2>
-      Support Youth Voices
-    </h2>
+<h2>
+Support Youth Voices
+</h2>
 
-    <p>
-      YVGA welcomes organizations aligned with youth leadership,
-      education and constructive international dialogue.
-    </p>
+<p>
 
-  </div>
+YVGA welcomes organizations aligned with youth leadership,
+education, innovation and constructive international dialogue.
 
-  <div class="cards">
+</p>
 
-    <a href="#contact" class="card">
+</div>
 
-      <h3>
-        Academic Partners
-      </h3>
 
-      <p>
-        Universities and educational institutions supporting
-        youth participation.
-      </p>
+<div class="cards">
 
-    </a>
 
-    <a href="#contact" class="card">
+<a
+href="#contact"
+class="card"
+>
 
-      <h3>
-        Strategic Partners
-      </h3>
+<h3>
+Academic Partners
+</h3>
 
-      <p>
-        Organizations contributing expertise, networks or
-        programme support.
-      </p>
+<p>
 
-    </a>
+Universities and educational institutions supporting youth
+participation and international exchange.
 
-    <a href="#contact" class="card">
+</p>
 
-      <h3>
-        Sponsors
-      </h3>
+</a>
 
-      <p>
-        Responsible businesses and foundations supporting
-        youth-focused programmes.
-      </p>
 
-    </a>
+<a
+href="#contact"
+class="card"
+>
 
-  </div>
+<h3>
+Strategic Partners
+</h3>
+
+<p>
+
+Organizations contributing expertise, networks or programme
+support.
+
+</p>
+
+</a>
+
+
+<a
+href="#contact"
+class="card"
+>
+
+<h3>
+Sponsors
+</h3>
+
+<p>
+
+Responsible businesses, foundations and organizations
+supporting youth-focused programmes.
+
+</p>
+
+</a>
+
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     REGISTRATION
-========================= -->
-
-<section class="join" id="delegate">
-
-  <div class="join-box">
-
-    <div class="section-title">
-
-      <div class="eyebrow">
-        JOIN YVGA
-      </div>
-
-      <h2>
-        BECOME A DELEGATE
-      </h2>
-
-      <p>
-        Register your interest for the Youth Voices Global Assembly.
-        Our team will contact you after the official event details
-        are confirmed.
-      </p>
-
-    </div>
-
-
-    <form
-      action="https://formsubmit.co/yvga.official@gmail.com"
-      method="POST"
-    >
-
-      <input
-        type="hidden"
-        name="_next"
-        value="https://yvga.co.uk/"
-      >
-
-      <input
-        type="hidden"
-        name="_subject"
-        value="Youth Voices Global Assembly — New Delegate Registration"
-      >
-
-      <input
-        type="hidden"
-        name="_template"
-        value="table"
-      >
-
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-      >
-
-
-      <div class="form-grid">
-
-
-        <div class="form-group">
-
-          <label>
-            Full Name *
-          </label>
-
-          <input
-            type="text"
-            name="Full Name"
-            placeholder="Enter your full name"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Email Address *
-          </label>
-
-          <input
-            type="email"
-            name="Email"
-            placeholder="Enter your email address"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            WhatsApp / Phone *
-          </label>
-
-          <input
-            type="tel"
-            name="Phone"
-            placeholder="+92 300 1234567"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Country *
-          </label>
-
-          <input
-            type="text"
-            name="Country"
-            placeholder="Your country"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            City *
-          </label>
-
-          <input
-            type="text"
-            name="City"
-            placeholder="Your city"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Date of Birth *
-          </label>
-
-          <input
-            type="date"
-            name="Date of Birth"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Occupation / Student *
-          </label>
-
-          <input
-            type="text"
-            name="Occupation"
-            placeholder="Student, professional, entrepreneur..."
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            University / Organization *
-          </label>
-
-          <input
-            type="text"
-            name="Organization"
-            placeholder="University or organization"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            What do you hope to gain from YVGA? *
-          </label>
-
-          <textarea
-            name="What do you hope to gain from YVGA"
-            placeholder="Tell us what you hope to learn, experience or achieve at YVGA..."
-            required
-          ></textarea>
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            Why do you want to participate? *
-          </label>
-
-          <textarea
-            name="Motivation"
-            placeholder="Tell us briefly about your interest in YVGA..."
-            required
-          ></textarea>
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            Instagram / Social Media Profile
-          </label>
-
-          <input
-            type="url"
-            name="Social Media Profile"
-            placeholder="https://instagram.com/your-profile"
-          >
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            How did you hear about YVGA?
-          </label>
-
-          <select name="How did you hear about YVGA">
-
-            <option value="">
-              Select one
-            </option>
-
-            <option>
-              Social Media
-            </option>
-
-            <option>
-              University
-            </option>
-
-            <option>
-              Friend / Colleague
-            </option>
-
-            <option>
-              Search Engine
-            </option>
-
-            <option>
-              Partner Organization
-            </option>
-
-            <option>
-              Other
-            </option>
-
-          </select>
-
-        </div>
-
-      </div>
-
-
-      <label class="consent">
-
-        <input
-          type="checkbox"
-          name="Consent"
-          value="I confirm the information provided is accurate"
-          required
-        >
-
-        <span>
-          I confirm that the information provided is accurate.
-        </span>
-
-      </label>
-
-
-      <button
-        type="submit"
-        class="btn"
-      >
-        SUBMIT REGISTRATION
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
+<!-- =========================================================
      CONTACT
-========================= -->
+========================================================= -->
 
-<section class="contact" id="contact">
+<section
+class="contact"
+id="contact"
+>
 
-  <div class="section-title">
+<div class="section-title">
 
-    <div class="eyebrow">
-      Contact
-    </div>
+<div class="eyebrow">
+Contact YVGA
+</div>
 
-    <h2>
-      Connect With YVGA
-    </h2>
+<h2>
+Connect With Us
+</h2>
 
-    <p>
-      For partnership, speaker and delegate enquiries,
-      contact the Assembly team.
-    </p>
+<p>
 
-  </div>
+For partnership, sponsorship, speaker and delegate enquiries,
+please contact the YVGA team.
 
-  <a
-    class="email"
-    href="mailto:yvga.official@gmail.com"
-  >
-    yvga.official@gmail.com
-  </a>
+</p>
+
+</div>
+
+
+<a
+class="email"
+href="mailto:yvga.official@gmail.com"
+>
+yvga.official@gmail.com
+</a>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer>
 
-  <div>
+<div>
 
-    <strong>
-      Youth Voices Global Assembly
-    </strong>
+<strong>
+Youth Voices Global Assembly
+</strong>
 
-    <br>
+<br>
 
-    Young Voices. Global Dialogue. Shared Future.
+Young Voices. Global Dialogue. Shared Future.
 
-  </div>
+</div>
 
 
-  <div>
+<div>
 
-    © 2026 YVGA. All rights reserved.
+© 2026 Youth Voices Global Assembly.
+All rights reserved.
 
-  </div>
+</div>
 
 </footer>
 
 
-<!-- =========================
+<!-- =========================================================
      JAVASCRIPT
-========================= -->
+========================================================= -->
 
 <script>
+
+
+/* MOBILE MENU */
 
 function toggleMenu(){
 
   document
-    .getElementById("mobileMenu")
-    .classList
-    .toggle("show");
+  .getElementById("mobileMenu")
+  .classList
+  .toggle("show");
 
 }
+
 
 function closeMenu(){
 
   document
-    .getElementById("mobileMenu")
-    .classList
-    .remove("show");
+  .getElementById("mobileMenu")
+  .classList
+  .remove("show");
 
 }
 
+
+/* OPEN REGISTRATION FORM */
+
+function openRegistration(){
+
+  closeMenu();
+
+  const registration =
+  document.getElementById("registration");
+
+  registration.classList.add("show");
+
+  setTimeout(function(){
+
+    registration.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  },100);
+
+}
+
+
 </script>
 
+
 </body>
+
 </html>
