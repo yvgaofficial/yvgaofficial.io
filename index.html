@@ -1,3 +1,108 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['form_type'])) {
+    header('Content-Type: application/json; charset=UTF-8');
+
+    $type = trim($_POST['form_type']);
+    $admin = 'info@yvga.co.uk';
+
+    $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
+    if (!$email) {
+        echo json_encode(['success' => false, 'message' => 'Please enter a valid email address.']);
+        exit;
+    }
+
+    $clean = function($value) {
+        return trim(strip_tags((string)$value));
+    };
+
+    if ($type === 'registration') {
+        $subject = 'New YVGA 2027 Conference Registration';
+        $first = $clean($_POST['first_name'] ?? '');
+        $last = $clean($_POST['last_name'] ?? '');
+
+        $body = "New YVGA 2027 Conference Registration\n\n"
+              . "First Name: {$first}\n"
+              . "Last Name: {$last}\n"
+              . "Email: {$email}\n"
+              . "Phone / WhatsApp: " . $clean($_POST['phone'] ?? '') . "\n"
+              . "Date of Birth: " . $clean($_POST['date_of_birth'] ?? '') . "\n"
+              . "Gender: " . $clean($_POST['gender'] ?? '') . "\n"
+              . "Nationality: " . $clean($_POST['nationality'] ?? '') . "\n"
+              . "Country of Residence: " . $clean($_POST['country'] ?? '') . "\n"
+              . "City: " . $clean($_POST['city'] ?? '') . "\n"
+              . "Current Status: " . $clean($_POST['status'] ?? '') . "\n"
+              . "Organization / Institution: " . $clean($_POST['organization'] ?? '') . "\n"
+              . "Field of Study / Profession: " . $clean($_POST['field'] ?? '') . "\n"
+              . "Area of Interest: " . $clean($_POST['interest'] ?? '') . "\n"
+              . "Participation Category: " . $clean($_POST['category'] ?? '') . "\n"
+              . "Motivation: " . $clean($_POST['motivation'] ?? '') . "\n"
+              . "Leadership / Community / Professional Experience: " . $clean($_POST['experience'] ?? '') . "\n";
+
+        $replySubject = 'Thank you for registering for YVGA 2027';
+        $replyBody = "Dear {$first} {$last},\n\n"
+                   . "Thank you for your registration for Youth Voices Global Assembly (YVGA) 2027.\n\n"
+                   . "Your registration form has been successfully submitted and received by our team. "
+                   . "We will review your information and contact you soon with further details.\n\n"
+                   . "Best regards,\n"
+                   . "Youth Voices Global Assembly (YVGA)\n"
+                   . "info@yvga.co.uk\n"
+                   . "www.yvga.co.uk";
+    } elseif ($type === 'partner') {
+        $subject = 'New YVGA Partnership Inquiry';
+        $name = $clean($_POST['full_name'] ?? '');
+        $org = $clean($_POST['organization'] ?? '');
+
+        $body = "New YVGA Partnership Inquiry\n\n"
+              . "Full Name: {$name}\n"
+              . "Organization / Company: {$org}\n"
+              . "Email: {$email}\n"
+              . "Phone / WhatsApp: " . $clean($_POST['phone'] ?? '') . "\n"
+              . "Partnership Type: " . $clean($_POST['partnership_type'] ?? '') . "\n"
+              . "Website: " . $clean($_POST['website'] ?? '') . "\n"
+              . "Message: " . $clean($_POST['message'] ?? '') . "\n";
+
+        $replySubject = 'Thank you for your interest in partnering with YVGA';
+        $replyBody = "Dear {$name},\n\n"
+                   . "Thank you for your interest in partnering with Youth Voices Global Assembly (YVGA).\n\n"
+                   . "Your partnership form has been successfully submitted. "
+                   . "Our team will review your interest and contact you soon.\n\n"
+                   . "Best regards,\n"
+                   . "Youth Voices Global Assembly (YVGA)\n"
+                   . "info@yvga.co.uk\n"
+                   . "www.yvga.co.uk";
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Invalid form.']);
+        exit;
+    }
+
+    // Use the website domain as the sender to avoid spoofing the visitor's address.
+    $headers = "From: YVGA Website <info@yvga.co.uk>\r\n";
+    $headers .= "Reply-To: {$email}\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    $sentAdmin = @mail($admin, $subject, $body, $headers);
+
+    $userHeaders = "From: Youth Voices Global Assembly <info@yvga.co.uk>\r\n";
+    $userHeaders .= "MIME-Version: 1.0\r\n";
+    $userHeaders .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $sentUser = @mail($email, $replySubject, $replyBody, $userHeaders);
+
+    if ($sentAdmin) {
+        echo json_encode([
+            'success' => true,
+            'message' => 'Your form has been successfully submitted.'
+        ]);
+    } else {
+        echo json_encode([
+            'success' => false,
+            'message' => 'The form could not be sent. Please try again.'
+        ]);
+    }
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -810,6 +915,63 @@ footer strong{
     justify-content:center;
   }
 }
+
+/* SUCCESS & PARTNERSHIP FORM */
+.success-message{
+  display:none;
+  text-align:center;
+  padding:45px 30px;
+  margin:25px 40px 40px;
+  background:#f4faf7;
+  border:1px solid #cde8d9;
+  border-radius:10px;
+}
+.success-message.show{display:block;}
+.success-icon{
+  width:65px;height:65px;margin:0 auto 18px;border-radius:50%;
+  background:#1f8f55;color:#fff;display:grid;place-items:center;
+  font-size:34px;font-weight:900;
+}
+.success-message h3{color:var(--navy);font-size:30px;margin-bottom:10px;}
+.success-message p{max-width:650px;margin:auto;color:var(--muted);font-size:16px;}
+
+.partner-btn{
+  border:0;
+  cursor:pointer;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:15px;
+}
+.partner-form-wrap{
+  display:none;
+  max-width:1050px;
+  margin:35px auto 0;
+}
+.partner-form-wrap.show{display:block;}
+.partner-form-box{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+.partner-form-header{
+  background:var(--navy);
+  color:#fff;
+  text-align:center;
+  padding:40px 30px;
+}
+.partner-form-header h3{font-size:34px;margin-bottom:10px;}
+.partner-form-header p{max-width:700px;margin:auto;color:#d5dfeb;}
+.partner-form{padding:40px;}
+.form-loading{opacity:.6;pointer-events:none;}
+
+@media(max-width:800px){
+  .partner-form{padding:25px 20px;}
+  .partner-form-header{padding:35px 20px;}
+  .partner-form-header h3{font-size:28px;}
+  .success-message{margin:20px;}
+}
+
 </style>
 </head>
 
@@ -1254,19 +1416,10 @@ participating in Youth Voices Global Assembly 2027.
 <form
 class="registration-form"
 id="conferenceForm"
-action="https://formsubmit.co/info@yvga.co.uk"
+action=""
 method="POST"
 >
-
-<input type="hidden" name="_subject"
-value="New YVGA 2027 Conference Registration">
-
-<input type="hidden" name="_template" value="table">
-
-<input type="hidden" name="_captcha" value="false">
-
-<input type="hidden" name="_next"
-value="https://yvga.co.uk/">
+<input type="hidden" name="form_type" value="registration">
 
 <div class="form-section-title">
 1. Personal Information
@@ -1500,6 +1653,13 @@ Close Registration
 
 </form>
 
+
+<div id="registrationSuccess" class="success-message">
+  <div class="success-icon">✓</div>
+  <h3>Thank You!</h3>
+  <p>Your registration has been successfully submitted. Our team has received your information and will contact you soon.</p>
+</div>
+
 </div>
 
 </section>
@@ -1532,16 +1692,95 @@ leadership development, international dialogue, networking
 and youth-led initiatives.
 </p>
 
-<a
-href="mailto:yvga.official@gmail.com?subject=YVGA Partnership Inquiry"
-class="partner-btn">
+<button
+type="button"
+class="partner-btn"
+onclick="openPartnerForm()">
 Become a Partner
-</a>
+</button>
 
 </div>
 
 </section>
 
+
+
+<div id="partnerFormWrap" class="partner-form-wrap">
+
+  <div class="partner-form-box">
+
+    <div class="partner-form-header">
+      <div class="eyebrow">Partnership</div>
+      <h3>Become a YVGA Partner</h3>
+      <p>Tell us a little about your organization and how you would like to support the conference.</p>
+    </div>
+
+    <form class="partner-form" id="partnerForm" action="" method="POST">
+      <input type="hidden" name="form_type" value="partner">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" name="full_name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Organization / Company <span class="required">*</span></label>
+          <input type="text" name="organization" placeholder="Organization or company name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address <span class="required">*</span></label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" name="phone" placeholder="+92...">
+        </div>
+
+        <div class="form-group">
+          <label>Partnership Type</label>
+          <select name="partnership_type">
+            <option value="">Select partnership type</option>
+            <option>Venue Partner</option>
+            <option>Corporate Sponsor</option>
+            <option>Airline / Travel Partner</option>
+            <option>Hotel Partner</option>
+            <option>Media Partner</option>
+            <option>Education Partner</option>
+            <option>NGO / Community Partner</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Website</label>
+          <input type="url" name="website" placeholder="https://">
+        </div>
+
+        <div class="form-group full">
+          <label>Tell us about your interest</label>
+          <textarea name="message" placeholder="Tell us how you would like to partner with YVGA..."></textarea>
+        </div>
+
+      </div>
+
+      <div class="submit-area">
+        <button type="submit" class="submit-btn">Submit Partnership Interest</button>
+        <button type="button" class="close-btn" onclick="closePartnerForm()">Close</button>
+      </div>
+    </form>
+
+    <div id="partnerSuccess" class="success-message">
+      <div class="success-icon">✓</div>
+      <h3>Thank You!</h3>
+      <p>Your partnership form has been successfully submitted. Thank you for your interest in YVGA. Our team will review your message and contact you soon.</p>
+    </div>
+
+  </div>
+</div>
 
 <!-- CTA -->
 <section class="register-cta">
@@ -1609,48 +1848,100 @@ International Youth Platform
 
 
 <script>
-
 function toggleMenu(){
-  document
-    .getElementById("mobileMenu")
-    .classList.toggle("show");
+  document.getElementById("mobileMenu").classList.toggle("show");
 }
 
 function closeMenu(){
-  document
-    .getElementById("mobileMenu")
-    .classList.remove("show");
+  document.getElementById("mobileMenu").classList.remove("show");
 }
 
 function openRegistration(){
-  document
-    .getElementById("registration")
-    .classList.add("show");
-
+  document.getElementById("registration").classList.add("show");
   setTimeout(function(){
-    document
-      .getElementById("registration")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
+    document.getElementById("registration").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
   },50);
-
   closeMenu();
 }
 
 function closeRegistration(){
-  document
-    .getElementById("registration")
-    .classList.remove("show");
-
-  document
-    .getElementById("home")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+  document.getElementById("registration").classList.remove("show");
+  document.getElementById("home").scrollIntoView({
+    behavior:"smooth"
+  });
 }
 
+function openPartnerForm(){
+  document.getElementById("partnerFormWrap").classList.add("show");
+  setTimeout(function(){
+    document.getElementById("partnerFormWrap").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  },50);
+}
+
+function closePartnerForm(){
+  document.getElementById("partnerFormWrap").classList.remove("show");
+}
+
+async function submitYVGAForm(form, successBox, button){
+  const originalText = button.innerHTML;
+  button.innerHTML = "Submitting...";
+  form.classList.add("form-loading");
+
+  try{
+    const response = await fetch(window.location.href, {
+      method:"POST",
+      headers:{
+        "Accept":"application/json",
+        "X-Requested-With":"XMLHttpRequest"
+      },
+      body:new FormData(form)
+    });
+
+    const result = await response.json();
+
+    if(result.success){
+      form.style.display = "none";
+      successBox.classList.add("show");
+      successBox.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+      form.reset();
+    }else{
+      alert(result.message || "Sorry, your form could not be submitted. Please try again.");
+      button.innerHTML = originalText;
+      form.classList.remove("form-loading");
+    }
+  }catch(error){
+    alert("Something went wrong. Please try again.");
+    button.innerHTML = originalText;
+    form.classList.remove("form-loading");
+  }
+}
+
+document.getElementById("conferenceForm").addEventListener("submit", function(event){
+  event.preventDefault();
+  submitYVGAForm(
+    this,
+    document.getElementById("registrationSuccess"),
+    this.querySelector(".submit-btn")
+  );
+});
+
+document.getElementById("partnerForm").addEventListener("submit", function(event){
+  event.preventDefault();
+  submitYVGAForm(
+    this,
+    document.getElementById("partnerSuccess"),
+    this.querySelector(".submit-btn")
+  );
+});
 </script>
 
 </body>
